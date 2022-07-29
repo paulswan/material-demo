@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material/material.module';
 import { ButtonsComponent } from './buttons/buttons.component';
-import { HelloComponent } from './hello.component';
+import { HomeComponent } from './home.component';
 import { ColorsComponent } from './colors/colors.component';
+import { TypographyComponent } from './typography/typography.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { ColorsComponent } from './colors/colors.component';
     MaterialModule,
     //
   ],
-  declarations: [AppComponent, HelloComponent, ButtonsComponent, ColorsComponent],
+  declarations: [AppComponent, HomeComponent, ButtonsComponent, ColorsComponent, TypographyComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

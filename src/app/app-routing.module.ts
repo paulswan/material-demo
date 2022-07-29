@@ -3,28 +3,31 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ButtonsComponent } from './buttons/buttons.component';
 import { ColorsComponent } from './colors/colors.component';
-import { HelloComponent } from './hello.component';
+import { HomeComponent } from './home.component';
+import { TypographyComponent } from './typography/typography.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'hello',
+    redirectTo: 'home',
   },
   {
-    path: 'hello',
-    component: HelloComponent,
+    path: 'home',
+    component: HomeComponent,
   },
   {
     path: 'buttons',
     component: ButtonsComponent,
   },
-  ,
   {
     path: 'colors',
     component: ColorsComponent,
   },
- 
+  {
+    path: 'typography',
+    component: TypographyComponent,
+  },
 ];
 
 @NgModule({
