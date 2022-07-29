@@ -8,6 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatDrawerContainer, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatSidenavModule,
     MatToolbarModule,
     MatGridListModule,
+    MatBadgeModule,
   ],
   exports: [
     MatSliderModule,
@@ -29,6 +31,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatSidenavModule,
     MatToolbarModule,
     MatGridListModule,
+    MatBadgeModule,
   ],
   providers: [MatDrawerContainer],
 })
