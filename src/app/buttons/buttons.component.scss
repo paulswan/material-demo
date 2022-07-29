@@ -5,18 +5,17 @@
 
   .example-label {
     display: table-cell;
-    font-size: 14px;
-    margin-left: 8px;
+    margin-left: 0.5rem;
     min-width: 120px;
   }
 
   .example-button-row {
     display: table-cell;
-    width: 490px;
+    width: 520px;
   }
 
   .example-button-row .mat-button-base {
-    margin: 8px 8px 8px 0;
+    margin: 0.5rem 0.5rem 0.5rem 0;
   }
 
   .example-flex-container {

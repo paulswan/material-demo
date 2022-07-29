@@ -1,6 +1,5 @@
 @use '@angular/material' as mat;
-
-@import '../../styles.scss';
+@import '../../assets/scss/theme.scss';
 
 @mixin get-palette-colors($palette, $hue) {
   color: mat.get-color-from-palette($palette, '#{$hue}-contrast');

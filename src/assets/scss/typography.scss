@@ -1,0 +1,17 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+@import url('https://rsms.me/inter/inter.css');
+html {
+  font-family: 'Inter', sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif;
+  }
+}
+
+$inter-typography: mat.define-typography-config(
+  $font-family: 'Inter',
+);
+@include mat.core($inter-typography);
