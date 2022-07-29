@@ -1,0 +1,28 @@
+@use '@angular/material' as mat;
+
+@import '../../styles.scss';
+
+@mixin get-palette-colors($palette, $hue) {
+  color: mat.get-color-from-palette($palette, '#{$hue}-contrast');
+  background-color: mat.get-color-from-palette($palette, $hue);
+}
+
+@mixin get-palette-classes($palette, $palette-name) {
+  $hues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+  @each $hue in $hues {
+    &.#{$palette-name}-#{$hue} {
+      @include get-palette-colors($palette, $hue);
+    }
+  }
+}
+
+:host {
+  .color-theme {
+    padding: 12px;
+    width: 200px;
+
+    @include get-palette-classes($light-primary, 'light-primary');
+    @include get-palette-classes($light-accent, 'light-accent');
+  }
+}

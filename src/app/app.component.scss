@@ -2,13 +2,22 @@
 
 :host {
   .example-container {
-    width: calc(100% - 12px);
+    width: 100%;
     min-height: 500px;
-    margin: 10px;
-    border: 1px solid $cocoondata-purple;
 
     mat-drawer-content {
       padding-left: 16px;
+    }
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .top-navbar {
+    &.mat-toolbar {
+      background: $cocoondata-purple;
+      color: white;
     }
   }
 }

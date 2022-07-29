@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material/material.module';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { HelloComponent } from './hello.component';
+import { ColorsComponent } from './colors/colors.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { HelloComponent } from './hello.component';
     MaterialModule,
     //
   ],
-  declarations: [AppComponent, HelloComponent, ButtonsComponent],
+  declarations: [AppComponent, HelloComponent, ButtonsComponent, ColorsComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

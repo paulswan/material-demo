@@ -69,7 +69,7 @@ $light-theme: mat.define-light-theme(
   )
 );
 
-$alt-light-primary: mat.define-palette($cocoon-purple-palette, 700);
+$alt-light-primary: mat.define-palette($cocoon-purple-palette, 500);
 $alt-light-accent: mat.define-palette($cocoon-green-palette, 900);
 $alt-light-theme: mat.define-light-theme(
   (
@@ -108,12 +108,4 @@ $prebuilt-theme: mat.define-light-theme(
 body {
   font-family: 'Roboto';
   margin: 0;
-}
-
-.mat-sidenav {
-  background-color: $cocoondata-purple;
-}
-.mat-drawer-container {
-  background-color: white;
-  color: rgba(black, 0.87);
 }

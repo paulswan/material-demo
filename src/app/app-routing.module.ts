@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ButtonsComponent } from './buttons/buttons.component';
+import { ColorsComponent } from './colors/colors.component';
 import { HelloComponent } from './hello.component';
 
 const routes: Routes = [
@@ -18,6 +19,12 @@ const routes: Routes = [
     path: 'buttons',
     component: ButtonsComponent,
   },
+  ,
+  {
+    path: 'colors',
+    component: ColorsComponent,
+  },
+ 
 ];
 
 @NgModule({

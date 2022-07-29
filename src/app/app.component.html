@@ -1,8 +1,28 @@
+<mat-toolbar class="top-navbar">
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Cocoon Data</span>
+
+  <span class="example-spacer"></span>
+
+  <button mat-icon-button>
+    <mat-icon>notifications</mat-icon>
+  </button>
+  <button mat-icon-button routerLink="/">
+    <mat-icon>home</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>person</mat-icon>
+  </button>
+</mat-toolbar>
+
 <mat-sidenav-container class="example-container" [hasBackdrop]="false">
   <mat-sidenav mode="side" opened [disableClose]="true">
     <mat-nav-list>
-      <a mat-list-item routerLink="/hello"> Hello </a>
-      <a mat-list-item routerLink="/buttons"> Buttons Demo </a>
+      <a mat-list-item routerLink="/hello">Angular Material</a>
+      <a mat-list-item routerLink="/colors">Colour Palette</a>
+      <a mat-list-item routerLink="/buttons">Buttons Demo</a>
     </mat-nav-list>
   </mat-sidenav>
 

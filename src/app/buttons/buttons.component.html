@@ -1,17 +1,25 @@
-<h3>Cocoon Data Colours</h3>
-<ng-container [ngTemplateOutlet]="matButtonsDemo"></ng-container>
+<h1>Buttons Demo</h1>
 
-<br /><br /><br />
-<div class="alt-light-theme">
-  <h3>Alternative colour selections</h3>
-  <ng-container [ngTemplateOutlet]="matButtonsDemo"></ng-container>
-</div>
-
-<br /><br /><br />
-<div class="prebuilt-theme">
-  <h3>Use prebuilt colour palettes</h3>
-  <ng-container [ngTemplateOutlet]="matButtonsDemo"></ng-container>
-</div>
+<mat-grid-list cols="2" rowHeight="3:2">
+  <mat-grid-tile>
+    <div>
+      <h3>Cocoon Data Colours</h3>
+      <ng-container [ngTemplateOutlet]="matButtonsDemo"></ng-container>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="alt-light-theme">
+      <h3>Cocoon Data Colours with alternative palette selections</h3>
+      <ng-container [ngTemplateOutlet]="matButtonsDemo"></ng-container>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="prebuilt-theme">
+      <h3>Use prebuilt colour palettes</h3>
+      <ng-container [ngTemplateOutlet]="matButtonsDemo"></ng-container>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
 
 <ng-template #matButtonsDemo>
   <section>
