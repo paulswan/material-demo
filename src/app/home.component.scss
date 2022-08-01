@@ -1,0 +1,16 @@
+:host {
+  .example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    align-items: flex-start;
+  }
+
+  .example-radio-button {
+    margin: 0.25rem;
+  }
+
+  ::ng-deep .mat-grid-tile-content {
+    align-items: flex-start;
+  }
+}

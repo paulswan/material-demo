@@ -66,7 +66,7 @@ $light-theme: mat.define-light-theme(
       primary: $light-primary,
       accent: $light-accent,
     ),
-    // typography: $inter-typography,
+    typography: $inter-typography,
   )
 );
 
@@ -78,7 +78,7 @@ $alt-light-theme: mat.define-light-theme(
       primary: $alt-light-primary,
       accent: $alt-light-accent,
     ),
-    // typography: $inter-typography,
+    typography: $inter-typography,
   )
 );
 .alt-light-theme {
@@ -89,6 +89,7 @@ $alt-light-theme: mat.define-light-theme(
 // Apply the light theme by default
 @include mat.core-theme($light-theme);
 @include mat.button-theme($light-theme);
+@include mat.all-component-themes($light-theme);
 
 // Define my theme
 $prebuilt-primary: mat.define-palette(mat.$purple-palette);
@@ -99,7 +100,7 @@ $prebuilt-theme: mat.define-light-theme(
       primary: $prebuilt-primary,
       accent: $prebuilt-accent,
     ),
-    // typography: $inter-typography,
+    typography: $inter-typography,
   )
 );
 

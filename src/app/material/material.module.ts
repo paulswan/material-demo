@@ -13,6 +13,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { MatChipsModule } from '@angular/material/chips';
     MatMenuModule,
     MatTooltipModule,
     MatChipsModule,
+    MatRadioModule,
   ],
   exports: [
     MatCommonModule,
@@ -44,6 +46,7 @@ import { MatChipsModule } from '@angular/material/chips';
     MatMenuModule,
     MatTooltipModule,
     MatChipsModule,
+    MatRadioModule,
   ],
   providers: [MatDrawerContainer],
 })

@@ -1,4 +1,5 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
+import { SidenavService } from './services/sidenav.service';
 
 @Component({
   selector: 'my-app',
@@ -7,4 +8,8 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent {
   opened = true;
+  $mode = this.sidenavService.$mode;
+  $hasBackdrop = this.sidenavService.$hasBackdrop;
+
+  constructor(private sidenavService: SidenavService) {}
 }
