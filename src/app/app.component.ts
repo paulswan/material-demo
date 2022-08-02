@@ -7,7 +7,7 @@ import { SidenavService } from './services/sidenav.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  opened = true;
+  opened = false;
   $mode = this.sidenavService.$mode;
   $hasBackdrop = this.sidenavService.$hasBackdrop;
 

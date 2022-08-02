@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material/material.module';
 import { ButtonsComponent } from './buttons/buttons.component';
-import { HomeComponent } from './home.component';
+import { HomeComponent } from './home/home.component';
 import { ColorsComponent } from './colors/colors.component';
 import { TypographyComponent } from './typography/typography.component';
+import { CheckboxRadioComponent } from './checkbox-radio/checkbox-radio.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,14 @@ import { TypographyComponent } from './typography/typography.component';
     MaterialModule,
     //
   ],
-  declarations: [AppComponent, HomeComponent, ButtonsComponent, ColorsComponent, TypographyComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ButtonsComponent,
+    ColorsComponent,
+    TypographyComponent,
+    CheckboxRadioComponent,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

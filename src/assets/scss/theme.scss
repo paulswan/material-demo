@@ -84,6 +84,7 @@ $alt-light-theme: mat.define-light-theme(
 .alt-light-theme {
   @include mat.core-color($alt-light-theme);
   @include mat.button-color($alt-light-theme);
+  @include mat.all-component-themes($alt-light-theme);
 }
 
 // Apply the light theme by default
@@ -107,4 +108,5 @@ $prebuilt-theme: mat.define-light-theme(
 .prebuilt-theme {
   @include mat.core-color($prebuilt-theme);
   @include mat.button-color($prebuilt-theme);
+  @include mat.all-component-themes($prebuilt-theme);
 }

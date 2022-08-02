@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ButtonsComponent } from './buttons/buttons.component';
+import { CheckboxRadioComponent } from './checkbox-radio/checkbox-radio.component';
 import { ColorsComponent } from './colors/colors.component';
-import { HomeComponent } from './home.component';
+import { HomeComponent } from './home/home.component';
 import { TypographyComponent } from './typography/typography.component';
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'typography',
     component: TypographyComponent,
+  },
+  {
+    path: 'checkbox-radio',
+    component: CheckboxRadioComponent,
   },
 ];
 

@@ -14,6 +14,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatTooltipModule,
     MatChipsModule,
     MatRadioModule,
+    MatCheckboxModule,
   ],
   exports: [
     MatCommonModule,
@@ -47,6 +49,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatTooltipModule,
     MatChipsModule,
     MatRadioModule,
+    MatCheckboxModule,
   ],
   providers: [MatDrawerContainer],
 })

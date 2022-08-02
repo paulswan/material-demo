@@ -1,0 +1,20 @@
+:host {
+  section {
+    display: table;
+    margin-bottom: 0.75rem;
+  }
+
+  .example-label {
+    display: table-cell;
+    margin-left: 0.5rem;
+    min-width: 140px;
+  }
+
+  .example-row {
+    display: table-cell;
+
+    .example-margin {
+      margin: 0 0.75rem;
+    }
+  }
+}
