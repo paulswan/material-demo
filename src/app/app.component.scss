@@ -1,11 +1,11 @@
-@import '../styles.scss';
+@import '../assets/scss/variables.scss';
 
 :host {
   .example-container {
     width: 100%;
     min-height: 500px;
 
-    mat-drawer-content {
+    .example-content {
       padding-left: 16px;
     }
   }
