@@ -1,0 +1,142 @@
+<h1>Inputs</h1>
+
+
+<form class="example-form">
+  <div>
+    <h3>Cocoon Data colour palette</h3>
+    <ng-container [ngTemplateOutlet]="formFieldAppearance"></ng-container>
+  </div>
+  <div class="alt-light-theme">
+    <h3>Cocoon Data colour palette with alternative palette selections</h3>
+    <ng-container [ngTemplateOutlet]="formFieldAppearance"></ng-container>
+  </div>
+  <div class="prebuilt-theme">
+    <h3>Prebuilt colour palettes (purple & green)</h3>
+    <ng-container [ngTemplateOutlet]="formFieldAppearance"></ng-container>
+  </div>
+
+  <ng-template #formFieldAppearance>
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="standard">
+            <mat-label>Standard</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Fill</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Outline</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </ng-template>
+
+
+  <h3>Example Inputs</h3>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Basic Input</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Basic Input With Long Label That Will Be Truncated</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Read-only</mat-label>
+          <input matInput [readonly]="true" value="You can't touch this">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Disabled</mat-label>
+          <input matInput disabled value="You really can't touch this">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Clearable Input</mat-label>
+          <input matInput type="text" [(ngModel)]="value">
+          <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Input with Placeholder</mat-label>
+          <input matInput placeholder="Placeholder text">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Textarea</mat-label>
+          <textarea matInput rows="4"></textarea>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Input with Hint</mat-label>
+          <input matInput maxlength="5">
+          <mat-hint>Hint - maxlength is 5</mat-hint>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Input with Hint at end</mat-label>
+          <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
+          <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                 placeholder="Ex. pat@example.com">
+          <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is required
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>With Prefix & Suffix</mat-label>
+          <span matPrefix>+1 &nbsp;</span>
+          <input type="tel" matInput placeholder="555-555-1234">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+</form>
+
+
+<br><br><br>

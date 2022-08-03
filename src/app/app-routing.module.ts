@@ -5,6 +5,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { CheckboxRadioComponent } from './checkbox-radio/checkbox-radio.component';
 import { ColorsComponent } from './colors/colors.component';
 import { HomeComponent } from './home/home.component';
+import { InputsComponent } from './inputs/inputs.component';
 import { TypographyComponent } from './typography/typography.component';
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'checkbox-radio',
     component: CheckboxRadioComponent,
+  },
+  {
+    path: 'inputs',
+    component: InputsComponent,
   },
 ];
 
