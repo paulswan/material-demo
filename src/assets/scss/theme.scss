@@ -52,6 +52,31 @@ $cocoon-green-palette: (
   ),
 );
 
+$cocoon-yellow-palette: (
+  50: #ffffe9,
+  100: #fcfbc7,
+  200: #faf8a1,
+  300: $cocoondata-yellow,
+  400: #fcf664,
+  500: #f9f147,
+  600: #fee546,
+  700: #fccd3b,
+  800: #fbb531,
+  900: #f88d1e,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: rgba(black, 0.87),
+    700: rgba(black, 0.87),
+    800: rgba(black, 0.87),
+    900: rgba(black, 0.87),
+  ),
+);
+
 $inter-typography: mat.define-typography-config(
   $font-family: 'Inter',
 );

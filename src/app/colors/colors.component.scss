@@ -2,7 +2,7 @@
 @import '../../assets/scss/theme.scss';
 
 @mixin get-palette-colors($palette, $hue) {
-  color: mat.get-color-from-palette($palette, '#{$hue}-contrast');
+  color: mat.get-contrast-color-from-palette($palette, $hue);
   background-color: mat.get-color-from-palette($palette, $hue);
 }
 
@@ -23,5 +23,6 @@
 
     @include get-palette-classes($light-primary, 'light-primary');
     @include get-palette-classes($light-accent, 'light-accent');
+    @include get-palette-classes($cocoon-yellow-palette, 'yellow');
   }
 }
