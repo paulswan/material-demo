@@ -19,6 +19,7 @@ export class InputsComponent implements OnInit {
   value = 'Clear me';
 
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  selected = new FormControl('valid', [Validators.required, Validators.pattern('valid')]);
 
   matcher = new MyErrorStateMatcher();
 
