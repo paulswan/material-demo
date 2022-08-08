@@ -55,8 +55,9 @@
     </mat-menu>
   </mat-toolbar>
 
-  <mat-sidenav-container class="example-container" [hasBackdrop]="pageData.hasBackdrop">
-    <mat-sidenav [mode]="pageData.mode" [(opened)]="opened" #sidenav class="example-sidenav" (click)="sidenav.toggle()">
+  <mat-sidenav-container class="example-container" [hasBackdrop]="pageData.hasBackdrop" [style.marginTop.px]="64">
+    <mat-sidenav [mode]="pageData.mode" [(opened)]="opened" #sidenav class="example-sidenav" (click)="sidenav.toggle()"
+                 [fixedInViewport]="false" [fixedTopGap]="64" [fixedBottomGap]="64">
       <mat-nav-list>
         <a mat-list-item routerLink="/home">Angular Material</a>
         <a mat-list-item routerLink="/colors">Colour Palette</a>
@@ -64,6 +65,11 @@
         <a mat-list-item routerLink="/buttons">Buttons & Badges</a>
         <a mat-list-item routerLink="/checkbox-radio">Checkboxes & Radios</a>
         <a mat-list-item routerLink="/inputs">Inputs</a>
+        <a mat-list-item routerLink="/dashboard">Dashboard</a>
+        <a mat-list-item routerLink="/table">Table</a>
+        <a mat-list-item routerLink="/address-form">Address Form</a>
+        <a mat-list-item routerLink="/tree">Tree</a>
+        <a mat-list-item routerLink="/drag-drop">Drag & Drop</a>
       </mat-nav-list>
     </mat-sidenav>
 

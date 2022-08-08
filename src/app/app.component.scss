@@ -6,7 +6,7 @@
     min-height: 500px;
 
     .example-content {
-      padding-left: 16px;
+      padding: 0 1rem 4rem 1rem;
     }
   }
 
@@ -24,6 +24,14 @@
   .example-footer {
     background: $cocoondata-purple;
     color: white;
+  }
+
+  .example-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3000;
   }
 
   .example-footer {

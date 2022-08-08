@@ -12,6 +12,11 @@ import { ColorsComponent } from './colors/colors.component';
 import { TypographyComponent } from './typography/typography.component';
 import { CheckboxRadioComponent } from './checkbox-radio/checkbox-radio.component';
 import { InputsComponent } from './inputs/inputs.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TableComponent } from './table/table.component';
+import { AddressFormComponent } from './address-form/address-form.component';
+import { TreeComponent } from './tree/tree.component';
+import { DragDropComponent } from './drag-drop/drag-drop.component';
 
 @NgModule({
   imports: [
@@ -31,6 +36,11 @@ import { InputsComponent } from './inputs/inputs.component';
     TypographyComponent,
     CheckboxRadioComponent,
     InputsComponent,
+    DashboardComponent,
+    TableComponent,
+    AddressFormComponent,
+    TreeComponent,
+    DragDropComponent,
   ],
   bootstrap: [AppComponent],
 })

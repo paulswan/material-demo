@@ -18,6 +18,15 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
+import { MatCardModule } from '@angular/material/card';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTreeModule } from '@angular/material/tree';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 @NgModule({
   imports: [
     MatCommonModule,
@@ -37,6 +46,14 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatCheckboxModule,
     MatInputModule,
     MatDatepickerModule,
+    MatCardModule,
+    LayoutModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatSelectModule,
+    MatTreeModule,
+    DragDropModule,
   ],
   exports: [
     MatCommonModule,
@@ -56,6 +73,14 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatCheckboxModule,
     MatInputModule,
     MatDatepickerModule,
+    MatCardModule,
+    LayoutModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatSelectModule,
+    MatTreeModule,
+    DragDropModule,
   ],
   providers: [MatDrawerContainer],
 })
