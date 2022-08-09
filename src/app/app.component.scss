@@ -24,22 +24,18 @@
   .example-footer {
     background: $cocoondata-purple;
     color: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 900;
   }
 
   .example-header {
-    position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
-    z-index: 3000;
   }
 
   .example-footer {
-    position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 3000;
     justify-content: center;
   }
 }

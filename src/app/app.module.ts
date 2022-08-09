@@ -17,6 +17,7 @@ import { TableComponent } from './table/table.component';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { TreeComponent } from './tree/tree.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
+import { CardsComponent } from './cards/cards.component';
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import { DragDropComponent } from './drag-drop/drag-drop.component';
     AddressFormComponent,
     TreeComponent,
     DragDropComponent,
+    CardsComponent,
   ],
   bootstrap: [AppComponent],
 })

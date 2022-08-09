@@ -17,7 +17,6 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-
 import { MatCardModule } from '@angular/material/card';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatTableModule } from '@angular/material/table';
@@ -26,6 +25,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTreeModule } from '@angular/material/tree';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   imports: [
@@ -54,6 +55,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatSelectModule,
     MatTreeModule,
     DragDropModule,
+    MatProgressBarModule,
+    MatExpansionModule,
   ],
   exports: [
     MatCommonModule,
@@ -81,6 +84,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatSelectModule,
     MatTreeModule,
     DragDropModule,
+    MatProgressBarModule,
+    MatExpansionModule,
   ],
   providers: [MatDrawerContainer],
 })

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddressFormComponent } from './address-form/address-form.component';
 
 import { ButtonsComponent } from './buttons/buttons.component';
+import { CardsComponent } from './cards/cards.component';
 import { CheckboxRadioComponent } from './checkbox-radio/checkbox-radio.component';
 import { ColorsComponent } from './colors/colors.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path: 'drag-drop',
     component: DragDropComponent,
+  },
+  {
+    path: 'cards',
+    component: CardsComponent,
   },
 ];
 
