@@ -26,7 +26,17 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTreeModule } from '@angular/material/tree';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   imports: [
@@ -56,7 +66,17 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTreeModule,
     DragDropModule,
     MatProgressBarModule,
+    MatProgressSpinnerModule,
     MatExpansionModule,
+    MatTabsModule,
+    MatStepperModule,
+    MatDialogModule,
+    MatSlideToggleModule,
+    MatButtonToggleModule,
+    MatSnackBarModule,
+    MatAutocompleteModule,
+    MatBottomSheetModule,
+    MatRippleModule,
   ],
   exports: [
     MatCommonModule,
@@ -85,7 +105,17 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTreeModule,
     DragDropModule,
     MatProgressBarModule,
+    MatProgressSpinnerModule,
     MatExpansionModule,
+    MatTabsModule,
+    MatStepperModule,
+    MatDialogModule,
+    MatSlideToggleModule,
+    MatButtonToggleModule,
+    MatSnackBarModule,
+    MatAutocompleteModule,
+    MatBottomSheetModule,
+    MatRippleModule,
   ],
   providers: [MatDrawerContainer],
 })

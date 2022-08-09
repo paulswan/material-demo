@@ -10,6 +10,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { HomeComponent } from './home/home.component';
 import { InputsComponent } from './inputs/inputs.component';
+import { OtherComponent } from './other/other.component';
+import { ProgressComponent } from './progress/progress.component';
+import { TabStepperComponent } from './tab-stepper/tab-stepper.component';
 import { TableComponent } from './table/table.component';
 import { TreeComponent } from './tree/tree.component';
 import { TypographyComponent } from './typography/typography.component';
@@ -67,6 +70,18 @@ const routes: Routes = [
   {
     path: 'cards',
     component: CardsComponent,
+  },
+  {
+    path: 'progress',
+    component: ProgressComponent,
+  },
+  {
+    path: 'tab-stepper',
+    component: TabStepperComponent,
+  },
+  {
+    path: 'other',
+    component: OtherComponent,
   },
 ];
 

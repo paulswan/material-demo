@@ -18,6 +18,9 @@ import { AddressFormComponent } from './address-form/address-form.component';
 import { TreeComponent } from './tree/tree.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { CardsComponent } from './cards/cards.component';
+import { BottomSheetExampleComponent, DialogExampleComponent, OtherComponent } from './other/other.component';
+import { ProgressComponent } from './progress/progress.component';
+import { TabStepperComponent } from './tab-stepper/tab-stepper.component';
 
 @NgModule({
   imports: [
@@ -43,6 +46,11 @@ import { CardsComponent } from './cards/cards.component';
     TreeComponent,
     DragDropComponent,
     CardsComponent,
+    ProgressComponent,
+    TabStepperComponent,
+    OtherComponent,
+    BottomSheetExampleComponent,
+    DialogExampleComponent,
   ],
   bootstrap: [AppComponent],
 })
