@@ -23,6 +23,6 @@
 
     @include get-palette-classes($light-primary, 'light-primary');
     @include get-palette-classes($light-accent, 'light-accent');
-    @include get-palette-classes($cocoon-yellow-palette, 'yellow');
+    @include get-palette-classes($light-warn, 'light-warn');
   }
 }

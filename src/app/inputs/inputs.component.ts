@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -17,6 +18,9 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class InputsComponent implements OnInit {
   value = 'Clear me';
+
+  formFieldAppearance: MatFormFieldAppearance = 'fill';
+  appearanceFormControl = new FormControl(this.formFieldAppearance);
 
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   selected = new FormControl('valid', [Validators.required, Validators.pattern('valid')]);

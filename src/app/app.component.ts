@@ -11,5 +11,11 @@ export class AppComponent {
   $mode = this.sidenavService.$mode;
   $hasBackdrop = this.sidenavService.$hasBackdrop;
 
+  themeClass = 'light-theme';
+
   constructor(private sidenavService: SidenavService) {}
+
+  changeTheme(theme) {
+    this.themeClass = theme;
+  }
 }
