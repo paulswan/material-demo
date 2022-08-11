@@ -9,6 +9,7 @@
 
   .mat-form-field {
     margin-top: 16px;
+    margin-right: 12px;
   }
 
   .example-container {
@@ -17,5 +18,9 @@
     left: 15px;
     right: 15px;
     bottom: 15px;
+  }
+
+  mat-chip {
+    max-width: 200px;
   }
 }

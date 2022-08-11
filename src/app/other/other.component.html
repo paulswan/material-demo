@@ -7,4 +7,48 @@
 <button mat-flat-button color="primary" (click)="openDialog()">Open dialog</button>
 
 <h3>SnackBar</h3>
-<button mat-flat-button color="primary" (click)="openSnackBar()">Open SnackBar</button>
+<mat-form-field appearance="fill">
+  <mat-label>Horizontal position</mat-label>
+  <mat-select [(value)]="horizontalPosition">
+    <mat-option value="start">Start</mat-option>
+    <mat-option value="center">Center</mat-option>
+    <mat-option value="end">End</mat-option>
+    <mat-option value="left">Left</mat-option>
+    <mat-option value="right">Right</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Vertical position</mat-label>
+  <mat-select [(value)]="verticalPosition">
+    <mat-option value="top">Top</mat-option>
+    <mat-option value="bottom">Bottom</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Snack bar duration (seconds)</mat-label>
+  <input type="number" [(ngModel)]="durationInSeconds" matInput>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Message</mat-label>
+  <input matInput value="Disco party!" #message>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Action</mat-label>
+  <input matInput value="Dance" #action>
+</mat-form-field>
+<button mat-flat-button color="primary" (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
+
+<h3>Chips</h3>
+<mat-chip-list aria-label="Fish selection">
+  <mat-chip>One fish</mat-chip>
+  <mat-chip>Two fish</mat-chip>
+  <mat-chip color="primary" selected>Primary fish</mat-chip>
+  <mat-chip color="accent" selected>Accent fish</mat-chip>
+</mat-chip-list>
+
+<h3>Stacked Chips</h3>
+<mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
+  <mat-chip *ngFor="let chip of availableColors" selected [color]="chip.color">
+    {{chip.name}}
+  </mat-chip>
+</mat-chip-list>

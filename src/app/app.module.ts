@@ -21,6 +21,7 @@ import { CardsComponent } from './cards/cards.component';
 import { BottomSheetExampleComponent, DialogExampleComponent, OtherComponent } from './other/other.component';
 import { ProgressComponent } from './progress/progress.component';
 import { TabStepperComponent } from './tab-stepper/tab-stepper.component';
+import { SlidersComponent } from './sliders/sliders.component';
 
 @NgModule({
   imports: [
@@ -51,6 +52,7 @@ import { TabStepperComponent } from './tab-stepper/tab-stepper.component';
     OtherComponent,
     BottomSheetExampleComponent,
     DialogExampleComponent,
+    SlidersComponent,
   ],
   bootstrap: [AppComponent],
 })

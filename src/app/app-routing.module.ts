@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { InputsComponent } from './inputs/inputs.component';
 import { OtherComponent } from './other/other.component';
 import { ProgressComponent } from './progress/progress.component';
+import { SlidersComponent } from './sliders/sliders.component';
 import { TabStepperComponent } from './tab-stepper/tab-stepper.component';
 import { TableComponent } from './table/table.component';
 import { TreeComponent } from './tree/tree.component';
@@ -78,6 +79,10 @@ const routes: Routes = [
   {
     path: 'tab-stepper',
     component: TabStepperComponent,
+  },
+  {
+    path: 'sliders',
+    component: SlidersComponent,
   },
   {
     path: 'other',

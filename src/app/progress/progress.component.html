@@ -23,16 +23,16 @@
     <section class="example-section">
       <label class="example-margin">Mode:</label>
       <mat-radio-group [(ngModel)]="mode">
-        <mat-radio-button class="example-margin" value="determinate">
+        <mat-radio-button class="example-margin" value="determinate" [color]="color">
           Determinate
         </mat-radio-button>
-        <mat-radio-button class="example-margin" value="indeterminate">
+        <mat-radio-button class="example-margin" value="indeterminate" [color]="color">
           Indeterminate
         </mat-radio-button>
-        <mat-radio-button class="example-margin" value="buffer">
+        <mat-radio-button class="example-margin" value="buffer" [color]="color">
           Buffer
         </mat-radio-button>
-        <mat-radio-button class="example-margin" value="query">
+        <mat-radio-button class="example-margin" value="query" [color]="color">
           Query
         </mat-radio-button>
       </mat-radio-group>
@@ -40,11 +40,11 @@
 
     <section class="example-section" *ngIf="mode === 'determinate' || mode === 'buffer'">
       <label class="example-margin">Progress:</label>
-      <mat-slider class="example-margin" [(ngModel)]="value"></mat-slider>
+      <mat-slider class="example-margin" [(ngModel)]="value" [color]="color"></mat-slider>
     </section>
     <section class="example-section" *ngIf="mode === 'buffer'">
       <label class="example-margin">Buffer:</label>
-      <mat-slider class="example-margin" [(ngModel)]="bufferValue"></mat-slider>
+      <mat-slider class="example-margin" [(ngModel)]="bufferValue" [color]="color"></mat-slider>
     </section>
   </mat-card-content>
 </mat-card>
@@ -89,10 +89,10 @@
     <section class="example-section">
       <label class="example-margin">Mode:</label>
       <mat-radio-group [(ngModel)]="spinnerMode">
-        <mat-radio-button class="example-margin" value="determinate">
+        <mat-radio-button class="example-margin" value="determinate" [color]="spinnerColor">
           Determinate
         </mat-radio-button>
-        <mat-radio-button class="example-margin" value="indeterminate">
+        <mat-radio-button class="example-margin" value="indeterminate" [color]="spinnerColor">
           Indeterminate
         </mat-radio-button>
       </mat-radio-group>
@@ -100,7 +100,7 @@
 
     <section class="example-section" *ngIf="mode === 'determinate'">
       <label class="example-margin">Progress:</label>
-      <mat-slider class="example-margin" [(ngModel)]="spinnerValue"></mat-slider>
+      <mat-slider class="example-margin" [(ngModel)]="spinnerValue" [color]="spinnerColor"></mat-slider>
     </section>
   </mat-card-content>
 </mat-card>

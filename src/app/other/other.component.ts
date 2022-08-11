@@ -1,7 +1,13 @@
 import { Component } from '@angular/core';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { ThemePalette } from '@angular/material/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+
+export interface ChipColor {
+  name: string;
+  color: ThemePalette;
+}
 
 @Component({
   selector: 'app-other',
@@ -10,6 +16,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class OtherComponent {
   durationInSeconds = 5;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+
+  availableColors: ChipColor[] = [
+    { name: 'none', color: undefined },
+    { name: 'Primary', color: 'primary' },
+    { name: 'Accent', color: 'accent' },
+    { name: 'Warn', color: 'warn' },
+  ];
 
   constructor(private _bottomSheet: MatBottomSheet, public dialog: MatDialog, private _snackBar: MatSnackBar) {}
 
@@ -22,8 +37,10 @@ export class OtherComponent {
     console.log(xxx);
   }
 
-  openSnackBar() {
-    this._snackBar.openFromComponent(SnackBarExampleComponent, {
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
       duration: this.durationInSeconds * 1000,
     });
   }
@@ -49,16 +66,3 @@ export class BottomSheetExampleComponent {
 export class DialogExampleComponent {
   constructor() {}
 }
-
-@Component({
-  selector: 'snack-bar-example.component',
-  templateUrl: 'snack-bar-example.component.html',
-  styles: [
-    `
-      .example-pizza-party {
-        color: hotpink;
-      }
-    `,
-  ],
-})
-export class SnackBarExampleComponent {}

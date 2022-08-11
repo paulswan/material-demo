@@ -1,0 +1,126 @@
+<h1>Sliders</h1>
+
+<mat-card>
+  <mat-card-content>
+    <h3>Slide Toggle configuration</h3>
+    <section class="example-section">
+      <label class="example-margin">Color:</label>
+      <mat-radio-group [(ngModel)]="color">
+        <mat-radio-button class="example-margin" value="primary" color="primary">
+          Primary
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="accent" color="accent">
+          Accent
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="warn" color="warn">
+          Warn
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [color]="color" [(ngModel)]="checked">Checked</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [color]="color" [(ngModel)]="disabled">Disabled</mat-checkbox>
+    </section>
+  </mat-card-content>
+</mat-card>
+<br>
+<mat-card class="result">
+  <mat-card-content>
+    <h3>Slide Toggle Result</h3>
+    <section class="example-section">
+      <mat-slide-toggle class="example-margin"
+                        [color]="color"
+                        [checked]="checked"
+                        [disabled]="disabled">
+        Slide me!
+      </mat-slide-toggle>
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<br><br>
+
+<mat-card>
+  <mat-card-content>
+    <h3>Slider configuration</h3>
+    <section class="example-section">
+      <label class="example-margin">Color:</label>
+      <mat-radio-group [(ngModel)]="color">
+        <mat-radio-button class="example-margin" value="primary" color="primary">
+          Primary
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="accent" color="accent">
+          Accent
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="warn" color="warn">
+          Warn
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
+    <section class="example-section">
+      <mat-form-field class="example-margin example-width" appearance="fill">
+        <mat-label>Value</mat-label>
+        <input matInput type="number" [(ngModel)]="value">
+      </mat-form-field>
+      <mat-form-field class="example-margin example-width" appearance="fill">
+        <mat-label>Min value</mat-label>
+        <input matInput type="number" [(ngModel)]="min">
+      </mat-form-field>
+      <mat-form-field class="example-margin example-width" appearance="fill">
+        <mat-label>Max value</mat-label>
+        <input matInput type="number" [(ngModel)]="max">
+      </mat-form-field>
+      <mat-form-field class="example-margin example-width" appearance="fill">
+        <mat-label>Step size</mat-label>
+        <input matInput type="number" [(ngModel)]="step">
+      </mat-form-field>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [color]="color" [(ngModel)]="showTicks">Show ticks</mat-checkbox>
+      <mat-checkbox class="example-margin" [color]="color" [(ngModel)]="autoTicks" *ngIf="showTicks">
+        Auto ticks
+      </mat-checkbox>
+      <mat-form-field class="example-margin example-width" appearance="fill" *ngIf="showTicks && !autoTicks">
+        <mat-label>Tick interval</mat-label>
+        <input matInput type="number" [(ngModel)]="tickInterval">
+      </mat-form-field>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [color]="color" [(ngModel)]="thumbLabel">Show thumb label</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [color]="color" [(ngModel)]="vertical">Vertical</mat-checkbox>
+      <mat-checkbox class="example-margin" [color]="color" [(ngModel)]="invert">Inverted</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [color]="color" [(ngModel)]="disabled">Disabled</mat-checkbox>
+    </section>
+  </mat-card-content>
+</mat-card>
+<br>
+<mat-card class="example-result-card">
+  <mat-card-content>
+    <h3>Slider Result</h3>
+    <br>
+    <br>
+    <div class="example-label-container" [class]="vertical ? 'example-label-vertical' : 'example-label-horizontal'">
+      <label id="example-name-label" class="example-name-label">Max Value</label>
+      <label class="example-value-label">{{value}}</label>
+    </div>
+    <mat-slider class="example-margin"
+                [disabled]="disabled"
+                [invert]="invert"
+                [max]="max"
+                [min]="min"
+                [step]="step"
+                [color]="color"
+                [thumbLabel]="thumbLabel"
+                [tickInterval]="getSliderTickInterval()"
+                [(ngModel)]="value"
+                [vertical]="vertical"
+                aria-labelledby="example-name-label">
+    </mat-slider>
+  </mat-card-content>
+</mat-card>
