@@ -124,6 +124,71 @@
           </mat-error>
         </mat-form-field>
       </td>
+      <td>
+        <mat-form-field class="example-full-width" [appearance]="formFieldAppearance">
+          <mat-label>Autocomplete</mat-label>
+          <input type="text"
+                 placeholder="Pick one"
+                 aria-label="Number"
+                 matInput
+                 [formControl]="autocompleteControl"
+                 [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="3">
+        <section class="example-section">
+          <label class="example-margin">Locale:</label>
+          <mat-radio-group [(ngModel)]="localeValue" [formControl]="localeFormControl" (change)="setLocale()">
+            <mat-radio-button class="example-margin" value="en-AU" color="primary">
+              en-AU
+            </mat-radio-button>
+            <mat-radio-button class="example-margin" value="en-US" color="primary">
+              en-US
+            </mat-radio-button>
+            <mat-radio-button class="example-margin" value="en-GB" color="primary">
+              en-GB
+            </mat-radio-button>
+            <mat-radio-button class="example-margin" value="ja" color="primary">
+              ja
+            </mat-radio-button>
+            <mat-radio-button class="example-margin" value="zh-CN" color="primary">
+              zh-CN
+            </mat-radio-button>
+          </mat-radio-group>
+        </section>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" [appearance]="formFieldAppearance">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-hint>{{localeFormat}}</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" [appearance]="formFieldAppearance">
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input [rangePicker]="rangePicker">
+            <input matStartDate placeholder="Start date">
+            <input matEndDate placeholder="End date">
+          </mat-date-range-input>
+          <mat-hint>{{localeFormat}} - {{localeFormat}}</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+          <mat-date-range-picker #rangePicker></mat-date-range-picker>
+        </mat-form-field>
+      </td>
     </tr>
   </table>
 </form>

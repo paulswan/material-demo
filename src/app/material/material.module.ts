@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 
-import { MatCommonModule } from '@angular/material/core';
+import { LayoutModule } from '@angular/cdk/layout';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
+import { MatCommonModule, MatRippleModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -18,13 +21,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCardModule } from '@angular/material/card';
-import { LayoutModule } from '@angular/cdk/layout';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTreeModule } from '@angular/material/tree';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -36,7 +37,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
-import { MatRippleModule } from '@angular/material/core';
+import { MatDateFnsModule } from '@angular/material-date-fns-adapter';
 
 @NgModule({
   imports: [
@@ -57,6 +58,7 @@ import { MatRippleModule } from '@angular/material/core';
     MatCheckboxModule,
     MatInputModule,
     MatDatepickerModule,
+    MatDateFnsModule,
     MatCardModule,
     LayoutModule,
     MatTableModule,
@@ -96,6 +98,7 @@ import { MatRippleModule } from '@angular/material/core';
     MatCheckboxModule,
     MatInputModule,
     MatDatepickerModule,
+    MatDateFnsModule,
     MatCardModule,
     LayoutModule,
     MatTableModule,
