@@ -1,119 +1,140 @@
-<div [ngClass]="themeClass">
-  <ng-container *ngIf="{mode: $mode | async, hasBackdrop: $hasBackdrop | async} as pageData">
-    <mat-toolbar class="example-header">
-      <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
+<ng-container *ngIf="{mode: $mode | async, hasBackdrop: $hasBackdrop | async} as pageData">
+  <mat-toolbar class="example-header">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Cocoon Data</span>
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button [matMenuTriggerFor]="themeMenu" matTooltip="Choose Theme">
+      <mat-icon>format_color_fill</mat-icon>
+    </button>
+    <mat-menu #themeMenu="matMenu" matTooltip="Notifications" xPosition="before">
+      <span mat-menu-item disabled>Light Themes</span>
+      <button mat-menu-item (click)="changeTheme('light-theme')">
+        <mat-icon *ngIf="themeClass !== 'light-theme'">radio_button_unchecked</mat-icon>
+        <mat-icon *ngIf="themeClass === 'light-theme'" color="accent">radio_button_checked</mat-icon>
+        <span>Cocoon Data palette</span>
       </button>
-      <span>Cocoon Data</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button [matMenuTriggerFor]="themeMenu" matTooltip="Choose Theme">
-        <mat-icon>palette</mat-icon>
+      <button mat-menu-item (click)="changeTheme('alt-light-theme')">
+        <mat-icon *ngIf="themeClass !== 'alt-light-theme'">radio_button_unchecked</mat-icon>
+        <mat-icon *ngIf="themeClass === 'alt-light-theme'" color="accent">radio_button_checked</mat-icon>
+        <span>Cocoon Data alternate</span>
       </button>
-      <mat-menu #themeMenu="matMenu" matTooltip="Notifications" xPosition="before">
-        <button mat-menu-item [matMenuTriggerFor]="lightThemes">Light Themes</button>
-        <button mat-menu-item [matMenuTriggerFor]="darkThemes">Dark Themes</button>
-      </mat-menu>
-      <mat-menu #lightThemes="matMenu">
-        <button mat-menu-item (click)="changeTheme('light-theme')">
-          <span>Cocoon Data palette</span>
-        </button>
-        <button mat-menu-item (click)="changeTheme('alt-light-theme')">
-          <span>Cocoon Data alternate</span>
-        </button>
-        <button mat-menu-item (click)="changeTheme('prebuilt-light-theme')">
-          <span>Prebuilt palettes (purple & green)</span>
-        </button>
-      </mat-menu>
-      <mat-menu #darkThemes="matMenu">
-        <button mat-menu-item (click)="changeTheme('dark-theme')">
-          <span>Cocoon Data palette</span>
-        </button>
-        <button mat-menu-item (click)="changeTheme('alt-dark-theme')">
-          <span>Cocoon Data alternate</span>
-        </button>
-        <button mat-menu-item (click)="changeTheme('prebuilt-dark-theme')">
-          <span>Prebuilt palettes (purple & green)</span>
-        </button>
-      </mat-menu>
-      <button mat-icon-button matTooltip="Notifications">
-        <mat-icon matBadge="5" matBadgeColor="warn">notifications</mat-icon>
+      <button mat-menu-item (click)="changeTheme('deeppurple-amber-light-theme')">
+        <mat-icon *ngIf="themeClass !== 'deeppurple-amber-light-theme'">radio_button_unchecked</mat-icon>
+        <mat-icon *ngIf="themeClass === 'deeppurple-amber-light-theme'" color="accent">radio_button_checked</mat-icon>
+        <span>Deep Purple &amp; Amber</span>
       </button>
-      <button mat-icon-button matTooltip="History">
-        <mat-icon>all_inbox</mat-icon>
+      <button mat-menu-item (click)="changeTheme('indigo-pink-light-theme')">
+        <mat-icon *ngIf="themeClass !== 'indigo-pink-light-theme'">radio_button_unchecked</mat-icon>
+        <mat-icon *ngIf="themeClass === 'indigo-pink-light-theme'" color="accent">radio_button_checked</mat-icon>
+        <span>Indigo &amp; Pink</span>
       </button>
-      <button mat-icon-button routerLink="/home" matTooltip="Home">
+      <mat-divider></mat-divider>
+      <span mat-menu-item disabled>Dark Themes</span>
+      <button mat-menu-item (click)="changeTheme('dark-theme')">
+        <mat-icon *ngIf="themeClass !== 'dark-theme'">radio_button_unchecked</mat-icon>
+        <mat-icon *ngIf="themeClass === 'dark-theme'" color="accent">radio_button_checked</mat-icon>
+        <span>Cocoon Data palette</span>
+      </button>
+      <button mat-menu-item (click)="changeTheme('alt-dark-theme')">
+        <mat-icon *ngIf="themeClass !== 'alt-dark-theme'">radio_button_unchecked</mat-icon>
+        <mat-icon *ngIf="themeClass === 'alt-dark-theme'" color="accent">radio_button_checked</mat-icon>
+        <span>Cocoon Data alternate</span>
+      </button>
+      <button mat-menu-item (click)="changeTheme('pink-bluegrey-dark-theme')">
+        <mat-icon *ngIf="themeClass !== 'pink-bluegrey-dark-theme'">radio_button_unchecked</mat-icon>
+        <mat-icon *ngIf="themeClass === 'pink-bluegrey-dark-theme'" color="accent">radio_button_checked</mat-icon>
+        <span>Pink &amp; Blue-grey</span>
+      </button>
+      <button mat-menu-item (click)="changeTheme('purple-green-dark-theme')">
+        <mat-icon *ngIf="themeClass !== 'purple-green-dark-theme'">radio_button_unchecked</mat-icon>
+        <mat-icon *ngIf="themeClass === 'purple-green-dark-theme'" color="accent">radio_button_checked
+        </mat-icon>
+        <span>Purple &amp; Green</span>
+      </button>
+    </mat-menu>
+
+    <button mat-icon-button matTooltip="Notifications">
+      <mat-icon matBadge="5" matBadgeColor="warn">notifications</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="History">
+      <mat-icon>all_inbox</mat-icon>
+    </button>
+    <button mat-icon-button routerLink="/home" matTooltip="Home">
+      <mat-icon>home</mat-icon>
+    </button>
+
+    <button mat-icon-button [matMenuTriggerFor]="personMenu" matTooltip="user@cocoondata.com">
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #personMenu="matMenu" matTooltip="Notifications">
+      <button mat-menu-item routerLink="/home">
         <mat-icon>home</mat-icon>
+        <span>Home</span>
       </button>
-      <button mat-icon-button [matMenuTriggerFor]="personMenu" matTooltip="user@cocoondata.com">
-        <mat-icon>person</mat-icon>
+      <button mat-menu-item>
+        <mat-icon>admin_panel_settings</mat-icon>
+        <span>Administration</span>
       </button>
-      <mat-menu #personMenu="matMenu" matTooltip="Notifications">
-        <button mat-menu-item routerLink="/home">
-          <mat-icon>home</mat-icon>
-          <span>Home</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>admin_panel_settings</mat-icon>
-          <span>Administration</span>
-        </button>
-        <mat-divider></mat-divider>
-        <button mat-menu-item>
-          <mat-icon>tour</mat-icon>
-          <span>Take The Tour</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>help</mat-icon>
-          <span>Help</span>
-        </button>
-        <mat-divider></mat-divider>
-        <button mat-menu-item>
-          <mat-icon>credit_card</mat-icon>
-          <span>Billing</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>account_circle</mat-icon>
-          <span>My Account</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>contacts</mat-icon>
-          <span>Contacts</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>logout</mat-icon>
-          <span>Sign Out</span>
-        </button>
-      </mat-menu>
-    </mat-toolbar>
+      <mat-divider></mat-divider>
+      <button mat-menu-item>
+        <mat-icon>tour</mat-icon>
+        <span>Take The Tour</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>help</mat-icon>
+        <span>Help</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item>
+        <mat-icon>credit_card</mat-icon>
+        <span>Billing</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>account_circle</mat-icon>
+        <span>My Account</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>contacts</mat-icon>
+        <span>Contacts</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span>Sign Out</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
 
-    <mat-sidenav-container class="example-container" [hasBackdrop]="pageData.hasBackdrop" [style.marginTop.px]="64">
-      <mat-sidenav [mode]="pageData.mode" [(opened)]="opened" #sidenav class="example-sidenav"
-                   (click)="sidenav.toggle()"
-                   [fixedInViewport]="false" [fixedTopGap]="64" [fixedBottomGap]="64">
-        <mat-nav-list>
-          <a mat-list-item routerLink="/home">Angular Material</a>
-          <a mat-list-item routerLink="/colors">Colour Palette</a>
-          <a mat-list-item routerLink="/typography">Typography</a>
-          <a mat-list-item routerLink="/buttons">Buttons & Badges</a>
-          <a mat-list-item routerLink="/checkbox-radio">Checkboxes & Radios</a>
-          <a mat-list-item routerLink="/inputs">Inputs</a>
-          <a mat-list-item routerLink="/address-form">Address Form</a>
-          <a mat-list-item routerLink="/cards">Cards & Panels</a>
-          <a mat-list-item routerLink="/dashboard">Dashboard</a>
-          <a mat-list-item routerLink="/table">Table</a>
-          <a mat-list-item routerLink="/tree">Tree</a>
-          <a mat-list-item routerLink="/sliders">Sliders</a>
-          <a mat-list-item routerLink="/drag-drop">Drag & Drop</a>
-          <a mat-list-item routerLink="/progress">Progress Bar & Spinner</a>
-          <a mat-list-item routerLink="/tab-stepper">Tabs & Steppers</a>
-          <a mat-list-item routerLink="/other">Other Components</a>
-        </mat-nav-list>
-      </mat-sidenav>
+  <mat-sidenav-container class="example-container" [hasBackdrop]="pageData.hasBackdrop" [style.marginTop.px]="64">
+    <mat-sidenav [mode]="pageData.mode" [(opened)]="opened" #sidenav class="example-sidenav"
+                 (click)="sidenav.toggle()"
+                 [fixedInViewport]="false" [fixedTopGap]="64" [fixedBottomGap]="64">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home">Angular Material</a>
+        <a mat-list-item routerLink="/colors">Colour Palette</a>
+        <a mat-list-item routerLink="/typography">Typography</a>
+        <a mat-list-item routerLink="/buttons">Buttons & Badges</a>
+        <a mat-list-item routerLink="/checkbox-radio">Checkboxes & Radios</a>
+        <a mat-list-item routerLink="/inputs">Inputs</a>
+        <a mat-list-item routerLink="/address-form">Address Form</a>
+        <a mat-list-item routerLink="/cards">Cards & Panels</a>
+        <a mat-list-item routerLink="/dashboard">Dashboard</a>
+        <a mat-list-item routerLink="/table">Table</a>
+        <a mat-list-item routerLink="/tree">Tree</a>
+        <a mat-list-item routerLink="/sliders">Sliders</a>
+        <a mat-list-item routerLink="/drag-drop">Drag & Drop</a>
+        <a mat-list-item routerLink="/progress">Progress Bar & Spinner</a>
+        <a mat-list-item routerLink="/tab-stepper">Tabs & Steppers</a>
+        <a mat-list-item routerLink="/other">Other Components</a>
+      </mat-nav-list>
+    </mat-sidenav>
 
-      <mat-drawer-content class="example-content">
-        <router-outlet></router-outlet>
-      </mat-drawer-content>
-    </mat-sidenav-container>
+    <mat-drawer-content class="example-content">
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-sidenav-container>
 
-    <mat-toolbar class="example-footer">Footer</mat-toolbar>
-  </ng-container>
-</div>
+  <mat-toolbar class="example-footer">Footer</mat-toolbar>
+</ng-container>

@@ -123,25 +123,6 @@ $alt-light-theme: mat.define-light-theme(
   @include mat.all-component-colors($alt-light-theme);
 }
 
-// Define a pre-built light theme
-$prebuilt-light-primary: mat.define-palette(mat.$purple-palette);
-$prebuilt-light-accent: mat.define-palette(mat.$green-palette);
-$prebuilt-light-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $prebuilt-light-primary,
-      accent: $prebuilt-light-accent,
-    ),
-    typography: $inter-typography,
-  )
-);
-
-.prebuilt-light-theme {
-  @include mat.core-color($prebuilt-light-theme);
-  @include mat.button-color($prebuilt-light-theme);
-  @include mat.all-component-colors($prebuilt-light-theme);
-}
-
 // Define a dark theme
 $dark-primary: mat.define-palette($cocoon-purple-palette, 900);
 $dark-accent: mat.define-palette($cocoon-green-palette, 200);
@@ -184,21 +165,80 @@ $alt-dark-theme: mat.define-dark-theme(
   @include mat.all-component-colors($alt-dark-theme);
 }
 
-// Define a pre-built dark theme
-$prebuilt-dark-primary: mat.define-palette(mat.$purple-palette);
-$prebuilt-dark-accent: mat.define-palette(mat.$green-palette);
-$prebuilt-dark-theme: mat.define-dark-theme(
+// Define light themes from pre-built palettes
+// deeppurple-amber
+$deeppurple-amber-light-primary: mat.define-palette(mat.$deep-purple-palette);
+$deeppurple-amber-light-accent: mat.define-palette(mat.$amber-palette);
+$deeppurple-amber-light-theme: mat.define-light-theme(
   (
     color: (
-      primary: $prebuilt-dark-primary,
-      accent: $prebuilt-dark-accent,
+      primary: $deeppurple-amber-light-primary,
+      accent: $deeppurple-amber-light-accent,
     ),
     typography: $inter-typography,
   )
 );
 
-.prebuilt-dark-theme {
-  @include mat.core-color($prebuilt-dark-theme);
-  @include mat.button-color($prebuilt-dark-theme);
-  @include mat.all-component-colors($prebuilt-dark-theme);
+.deeppurple-amber-light-theme {
+  @include mat.core-color($deeppurple-amber-light-theme);
+  @include mat.button-color($deeppurple-amber-light-theme);
+  @include mat.all-component-colors($deeppurple-amber-light-theme);
+}
+
+// indigo-pink
+$indigo-pink-light-primary: mat.define-palette(mat.$indigo-palette);
+$indigo-pink-light-accent: mat.define-palette(mat.$pink-palette);
+$indigo-pink-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $indigo-pink-light-primary,
+      accent: $indigo-pink-light-accent,
+    ),
+    typography: $inter-typography,
+  )
+);
+
+.indigo-pink-light-theme {
+  @include mat.core-color($indigo-pink-light-theme);
+  @include mat.button-color($indigo-pink-light-theme);
+  @include mat.all-component-colors($indigo-pink-light-theme);
+}
+
+// Define dark themes from pre-built palettes
+// pink-bluegrey
+$pink-bluegrey-dark-primary: mat.define-palette(mat.$pink-palette);
+$pink-bluegrey-dark-accent: mat.define-palette(mat.$blue-grey-palette);
+$pink-bluegrey-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $pink-bluegrey-dark-primary,
+      accent: $pink-bluegrey-dark-accent,
+    ),
+    typography: $inter-typography,
+  )
+);
+
+.pink-bluegrey-dark-theme {
+  @include mat.core-color($pink-bluegrey-dark-theme);
+  @include mat.button-color($pink-bluegrey-dark-theme);
+  @include mat.all-component-colors($pink-bluegrey-dark-theme);
+}
+
+// purple-green
+$purple-green-dark-primary: mat.define-palette(mat.$purple-palette);
+$purple-green-dark-accent: mat.define-palette(mat.$green-palette);
+$purple-green-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $purple-green-dark-primary,
+      accent: $purple-green-dark-accent,
+    ),
+    typography: $inter-typography,
+  )
+);
+
+.purple-green-dark-theme {
+  @include mat.core-color($purple-green-dark-theme);
+  @include mat.button-color($purple-green-dark-theme);
+  @include mat.all-component-colors($purple-green-dark-theme);
 }

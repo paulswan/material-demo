@@ -16,6 +16,13 @@ export class AppComponent {
   constructor(private sidenavService: SidenavService) {}
 
   changeTheme(theme) {
-    this.themeClass = theme;
+    const bodyElement = document.body;
+    if (bodyElement) {
+      // remove existing class (needed if theme is being changed)
+      bodyElement.classList.remove(this.themeClass);
+      // add new theme class
+      bodyElement.classList.add(theme);
+      this.themeClass = theme;
+    }
   }
 }
