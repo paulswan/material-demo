@@ -1,10 +1,34 @@
 <h1>Colour Palette</h1>
 
+<h3>Cocoon Data color palettes</h3>
 <mat-grid-list cols="3" rowHeight="50px" style="width: 900px">
   <ng-container *ngFor="let hue of [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]">
     <ng-container *ngFor="let color of ['primary', 'accent', 'warn']">
       <mat-grid-tile>
         <div class="color-theme light-{{color}}-{{hue}}">{{color | titlecase}} {{hue}}</div>
+      </mat-grid-tile>
+    </ng-container>
+  </ng-container>
+</mat-grid-list>
+
+<br>
+
+<h3>Material Design color palettes</h3>
+<mat-grid-list cols="4" rowHeight="50px" style="width: 1200px">
+  <ng-container *ngFor="let hue of [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]">
+    <ng-container *ngFor="let palette of ['deep-purple', 'amber', 'indigo', 'pink']">
+      <mat-grid-tile>
+        <div class="color-theme {{palette}}-{{hue}}">{{palette}}-{{hue}}</div>
+      </mat-grid-tile>
+    </ng-container>
+  </ng-container>
+</mat-grid-list>
+<br>
+<mat-grid-list cols="4" rowHeight="50px" style="width: 1200px">
+  <ng-container *ngFor="let hue of [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]">
+    <ng-container *ngFor="let palette of ['blue-grey', 'purple', 'green', 'red']">
+      <mat-grid-tile>
+        <div class="color-theme {{palette}}-{{hue}}">{{palette}}-{{hue}}</div>
       </mat-grid-tile>
     </ng-container>
   </ng-container>
