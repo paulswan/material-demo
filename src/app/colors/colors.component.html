@@ -1,103 +1,11 @@
 <h1>Colour Palette</h1>
 
 <mat-grid-list cols="3" rowHeight="50px" style="width: 900px">
-  <mat-grid-tile>
-    <div class="color-theme light-primary-50">Primary 50</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-accent-50">Accent 50</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-warn-50">Warn 50</div>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <div class="color-theme light-primary-100">Primary 100</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-accent-100">Accent 100</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-warn-100">Warn 100</div>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <div class="color-theme light-primary-200">Primary 200</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-accent-200">Accent 200 *</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-warn-200">Warn 200</div>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <div class="color-theme light-primary-300">Primary 300</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-accent-300">Accent 300</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-warn-300">Warn 300 *</div>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <div class="color-theme light-primary-400">Primary 400</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-accent-400">Accent 400</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-warn-400">Warn 400</div>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <div class="color-theme light-primary-500">Primary 500</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-accent-500">Accent 500</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-warn-500">Warn 500</div>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <div class="color-theme light-primary-600">Primary 600</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-accent-600">Accent 600</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-warn-600">Warn 600</div>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <div class="color-theme light-primary-700">Primary 700</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-accent-700">Accent 700</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-warn-700">Warn 700</div>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <div class="color-theme light-primary-800">Primary 800</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-accent-800">Accent 800</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-warn-800">Warn 800</div>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <div class="color-theme light-primary-900">Primary 900 *</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-accent-900">Accent 900</div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="color-theme light-warn-900">Warn 900</div>
-  </mat-grid-tile>
+  <ng-container *ngFor="let hue of [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]">
+    <ng-container *ngFor="let color of ['primary', 'accent', 'warn']">
+      <mat-grid-tile>
+        <div class="color-theme light-{{color}}-{{hue}}">{{color | titlecase}} {{hue}}</div>
+      </mat-grid-tile>
+    </ng-container>
+  </ng-container>
 </mat-grid-list>
