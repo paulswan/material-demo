@@ -16,7 +16,7 @@
 <h3>Material Design color palettes</h3>
 <mat-grid-list cols="4" rowHeight="50px" style="width: 1200px">
   <ng-container *ngFor="let hue of [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]">
-    <ng-container *ngFor="let palette of ['deep-purple', 'amber', 'indigo', 'pink']">
+    <ng-container *ngFor="let palette of ['purple', 'deep-purple', 'indigo', 'red']">
       <mat-grid-tile>
         <div class="color-theme {{palette}}-{{hue}}">{{palette}}-{{hue}}</div>
       </mat-grid-tile>
@@ -26,7 +26,7 @@
 <br>
 <mat-grid-list cols="4" rowHeight="50px" style="width: 1200px">
   <ng-container *ngFor="let hue of [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]">
-    <ng-container *ngFor="let palette of ['blue-grey', 'purple', 'green', 'red']">
+    <ng-container *ngFor="let palette of ['green', 'amber', 'pink', 'blue-grey']">
       <mat-grid-tile>
         <div class="color-theme {{palette}}-{{hue}}">{{palette}}-{{hue}}</div>
       </mat-grid-tile>
