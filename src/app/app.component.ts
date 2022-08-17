@@ -15,7 +15,7 @@ export class AppComponent {
 
   constructor(private sidenavService: SidenavService) {}
 
-  changeTheme(theme) {
+  changeTheme(theme: string) {
     const bodyElement = document.body;
     if (bodyElement) {
       // remove existing class (needed if theme is being changed)

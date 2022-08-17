@@ -29,7 +29,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     { provide: MAT_DATE_FORMATS, useValue: MAT_DATE_FNS_FORMATS },
   ],
 })
-export class InputsComponent implements OnInit {
+export class InputsComponent {
   value = 'Clear me';
 
   formFieldAppearance: MatFormFieldAppearance = 'fill';
@@ -48,9 +48,7 @@ export class InputsComponent implements OnInit {
   localeValue = 'en-AU';
   localeFormControl = new FormControl(this.localeValue);
 
-  constructor(private _adapter: DateAdapter<any>, @Inject(MAT_DATE_LOCALE) private _locale: Locale) {}
-
-  ngOnInit() {
+  constructor(private _adapter: DateAdapter<any>, @Inject(MAT_DATE_LOCALE) private _locale: Locale) {
     this.filteredOptions = this.autocompleteControl.valueChanges.pipe(
       startWith(''),
       map((value) => this._filter(value || ''))

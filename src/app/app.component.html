@@ -108,7 +108,7 @@
   </mat-toolbar>
 
   <mat-sidenav-container class="example-container" [hasBackdrop]="pageData.hasBackdrop" [style.marginTop.px]="64">
-    <mat-sidenav [mode]="pageData.mode" [(opened)]="opened" #sidenav class="example-sidenav"
+    <mat-sidenav [mode]="pageData.mode || 'over'" [(opened)]="opened" #sidenav class="example-sidenav"
                  (click)="sidenav.toggle()"
                  [fixedInViewport]="false" [fixedTopGap]="64" [fixedBottomGap]="64">
       <mat-nav-list>

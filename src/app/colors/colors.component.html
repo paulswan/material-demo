@@ -5,7 +5,10 @@
   <ng-container *ngFor="let hue of [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]">
     <ng-container *ngFor="let color of ['primary', 'accent', 'warn']">
       <mat-grid-tile>
-        <div class="color-theme light-{{color}}-{{hue}}">{{color | titlecase}} {{hue}}</div>
+        <div class="color-theme light-{{color}}-{{hue}}">
+          <span>{{color | titlecase}} {{hue}}</span>
+          <span *ngIf="cocoonDataColors.includes('light-'+color+'-'+hue)">&nbsp;*</span>
+        </div>
       </mat-grid-tile>
     </ng-container>
   </ng-container>
