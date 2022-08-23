@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDrawerMode } from '@angular/material/sidenav';
+
 import { SidenavService } from '../services/sidenav.service';
 
 @Component({

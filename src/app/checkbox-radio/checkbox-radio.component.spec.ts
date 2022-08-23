@@ -8,9 +8,8 @@ describe('CheckboxRadioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CheckboxRadioComponent ]
-    })
-    .compileComponents();
+      declarations: [CheckboxRadioComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CheckboxRadioComponent);
     component = fixture.componentInstance;

@@ -1,54 +1,54 @@
 <ng-container *ngIf="{mode: $mode | async, hasBackdrop: $hasBackdrop | async} as pageData">
   <mat-toolbar class="example-header">
-    <button mat-icon-button (click)="sidenav.toggle()">
+    <button mat-icon-button type="button" (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
     <span>Cocoon Data</span>
     <span class="example-spacer"></span>
 
-    <button mat-icon-button [matMenuTriggerFor]="themeMenu" matTooltip="Choose Theme">
+    <button mat-icon-button type="button" [matMenuTriggerFor]="themeMenu" matTooltip="Choose Theme">
       <mat-icon>format_color_fill</mat-icon>
     </button>
     <mat-menu #themeMenu="matMenu" matTooltip="Notifications" xPosition="before">
       <span mat-menu-item disabled>Light Themes</span>
-      <button mat-menu-item (click)="changeTheme('light-theme')">
+      <button mat-menu-item type="button" (click)="changeTheme('light-theme')">
         <mat-icon *ngIf="themeClass !== 'light-theme'">radio_button_unchecked</mat-icon>
         <mat-icon *ngIf="themeClass === 'light-theme'" color="accent">radio_button_checked</mat-icon>
         <span>Cocoon Data palette</span>
       </button>
-      <button mat-menu-item (click)="changeTheme('alt-light-theme')">
+      <button mat-menu-item type="button" (click)="changeTheme('alt-light-theme')">
         <mat-icon *ngIf="themeClass !== 'alt-light-theme'">radio_button_unchecked</mat-icon>
         <mat-icon *ngIf="themeClass === 'alt-light-theme'" color="accent">radio_button_checked</mat-icon>
         <span>Cocoon Data alternate</span>
       </button>
-      <button mat-menu-item (click)="changeTheme('deeppurple-amber-light-theme')">
+      <button mat-menu-item type="button" (click)="changeTheme('deeppurple-amber-light-theme')">
         <mat-icon *ngIf="themeClass !== 'deeppurple-amber-light-theme'">radio_button_unchecked</mat-icon>
         <mat-icon *ngIf="themeClass === 'deeppurple-amber-light-theme'" color="accent">radio_button_checked</mat-icon>
         <span>Deep Purple &amp; Amber</span>
       </button>
-      <button mat-menu-item (click)="changeTheme('indigo-pink-light-theme')">
+      <button mat-menu-item type="button" (click)="changeTheme('indigo-pink-light-theme')">
         <mat-icon *ngIf="themeClass !== 'indigo-pink-light-theme'">radio_button_unchecked</mat-icon>
         <mat-icon *ngIf="themeClass === 'indigo-pink-light-theme'" color="accent">radio_button_checked</mat-icon>
         <span>Indigo &amp; Pink</span>
       </button>
       <mat-divider></mat-divider>
       <span mat-menu-item disabled>Dark Themes</span>
-      <button mat-menu-item (click)="changeTheme('dark-theme')">
+      <button mat-menu-item type="button" (click)="changeTheme('dark-theme')">
         <mat-icon *ngIf="themeClass !== 'dark-theme'">radio_button_unchecked</mat-icon>
         <mat-icon *ngIf="themeClass === 'dark-theme'" color="accent">radio_button_checked</mat-icon>
         <span>Cocoon Data palette</span>
       </button>
-      <button mat-menu-item (click)="changeTheme('alt-dark-theme')">
+      <button mat-menu-item type="button" (click)="changeTheme('alt-dark-theme')">
         <mat-icon *ngIf="themeClass !== 'alt-dark-theme'">radio_button_unchecked</mat-icon>
         <mat-icon *ngIf="themeClass === 'alt-dark-theme'" color="accent">radio_button_checked</mat-icon>
         <span>Cocoon Data alternate</span>
       </button>
-      <button mat-menu-item (click)="changeTheme('pink-bluegrey-dark-theme')">
+      <button mat-menu-item type="button" (click)="changeTheme('pink-bluegrey-dark-theme')">
         <mat-icon *ngIf="themeClass !== 'pink-bluegrey-dark-theme'">radio_button_unchecked</mat-icon>
         <mat-icon *ngIf="themeClass === 'pink-bluegrey-dark-theme'" color="accent">radio_button_checked</mat-icon>
         <span>Pink &amp; Blue-grey</span>
       </button>
-      <button mat-menu-item (click)="changeTheme('purple-green-dark-theme')">
+      <button mat-menu-item type="button" (click)="changeTheme('purple-green-dark-theme')">
         <mat-icon *ngIf="themeClass !== 'purple-green-dark-theme'">radio_button_unchecked</mat-icon>
         <mat-icon *ngIf="themeClass === 'purple-green-dark-theme'" color="accent">radio_button_checked
         </mat-icon>
@@ -56,51 +56,51 @@
       </button>
     </mat-menu>
 
-    <button mat-icon-button matTooltip="Notifications">
+    <button mat-icon-button type="button" matTooltip="Notifications">
       <mat-icon matBadge="5" matBadgeColor="warn">notifications</mat-icon>
     </button>
-    <button mat-icon-button matTooltip="History">
+    <button mat-icon-button type="button" matTooltip="History">
       <mat-icon>all_inbox</mat-icon>
     </button>
-    <button mat-icon-button routerLink="/home" matTooltip="Home">
+    <button mat-icon-button type="button" routerLink="/home" matTooltip="Home">
       <mat-icon>home</mat-icon>
     </button>
 
-    <button mat-icon-button [matMenuTriggerFor]="personMenu" matTooltip="user@cocoondata.com">
+    <button mat-icon-button type="button" [matMenuTriggerFor]="personMenu" matTooltip="user@cocoondata.com">
       <mat-icon>person</mat-icon>
     </button>
     <mat-menu #personMenu="matMenu" matTooltip="Notifications">
-      <button mat-menu-item routerLink="/home">
+      <button mat-menu-item type="button" routerLink="/home">
         <mat-icon>home</mat-icon>
         <span>Home</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item type="button">
         <mat-icon>admin_panel_settings</mat-icon>
         <span>Administration</span>
       </button>
       <mat-divider></mat-divider>
-      <button mat-menu-item>
+      <button mat-menu-item type="button">
         <mat-icon>tour</mat-icon>
         <span>Take The Tour</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item type="button">
         <mat-icon>help</mat-icon>
         <span>Help</span>
       </button>
       <mat-divider></mat-divider>
-      <button mat-menu-item>
+      <button mat-menu-item type="button">
         <mat-icon>credit_card</mat-icon>
         <span>Billing</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item type="button">
         <mat-icon>account_circle</mat-icon>
         <span>My Account</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item type="button">
         <mat-icon>contacts</mat-icon>
         <span>Contacts</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item type="button">
         <mat-icon>logout</mat-icon>
         <span>Sign Out</span>
       </button>

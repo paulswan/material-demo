@@ -1,11 +1,11 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AddressFormComponent } from './address-form.component';
 
@@ -15,7 +15,7 @@ describe('AddressFormComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddressFormComponent ],
+      declarations: [AddressFormComponent],
       imports: [
         NoopAnimationsModule,
         ReactiveFormsModule,
@@ -24,7 +24,7 @@ describe('AddressFormComponent', () => {
         MatInputModule,
         MatRadioModule,
         MatSelectModule,
-      ]
+      ],
     }).compileComponents();
   }));
 

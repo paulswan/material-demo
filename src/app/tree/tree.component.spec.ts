@@ -1,4 +1,4 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTreeModule } from '@angular/material/tree';
@@ -11,12 +11,8 @@ describe('TreeComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ TreeComponent ],
-      imports: [
-        MatButtonModule,
-        MatIconModule,
-        MatTreeModule,
-      ]
+      declarations: [TreeComponent],
+      imports: [MatButtonModule, MatIconModule, MatTreeModule],
     }).compileComponents();
   }));
 

@@ -4,6 +4,10 @@
   "editor.formatOnType": true,
   "editor.formatOnSaveMode": "file",
   "editor.autoIndent": "full",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "eslint.validate": ["typescript"],
   "files.trimTrailingWhitespace": true,
 
   "html.format.wrapLineLength": 120,

@@ -1,11 +1,11 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { DateAdapter, ErrorStateMatcher, MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material/core';
 import { DateFnsAdapter, MAT_DATE_FNS_FORMATS } from '@angular/material-date-fns-adapter';
+import { DateAdapter, ErrorStateMatcher, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
-import { map, Observable, startWith } from 'rxjs';
-import { enAU, enUS, enGB, ja, zhCN } from 'date-fns/locale';
 import { Locale } from 'date-fns';
+import { enAU, enGB, enUS, ja, zhCN } from 'date-fns/locale';
+import { Observable, map, startWith } from 'rxjs';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -48,6 +48,7 @@ export class InputsComponent {
   localeValue = 'en-AU';
   localeFormControl = new FormControl(this.localeValue);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   constructor(private _adapter: DateAdapter<any>, @Inject(MAT_DATE_LOCALE) private _locale: Locale) {
     this.filteredOptions = this.autocompleteControl.valueChanges.pipe(
       startWith(''),

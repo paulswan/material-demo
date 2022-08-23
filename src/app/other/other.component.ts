@@ -33,8 +33,7 @@ export class OtherComponent {
   }
 
   openDialog() {
-    const xxx = this.dialog.open(DialogExampleComponent);
-    console.log(xxx);
+    this.dialog.open(DialogExampleComponent);
   }
 
   openSnackBar(message: string, action: string) {
@@ -63,6 +62,4 @@ export class BottomSheetExampleComponent {
   selector: 'dialog-example.component',
   templateUrl: './dialog-example.component.html',
 })
-export class DialogExampleComponent {
-  constructor() {}
-}
+export class DialogExampleComponent {}

@@ -1,10 +1,10 @@
 <h1>Other Components</h1>
 
 <h3>Bottom Sheet</h3>
-<button mat-flat-button color="primary" (click)="openBottomSheet()">Open Bottom Sheet</button>
+<button mat-flat-button type="button" color="primary" (click)="openBottomSheet()">Open Bottom Sheet</button>
 
 <h3>Dialog</h3>
-<button mat-flat-button color="primary" (click)="openDialog()">Open dialog</button>
+<button mat-flat-button type="button" color="primary" (click)="openDialog()">Open dialog</button>
 
 <h3>SnackBar</h3>
 <mat-form-field appearance="fill">
@@ -36,7 +36,8 @@
   <mat-label>Action</mat-label>
   <input matInput value="Dance" #action>
 </mat-form-field>
-<button mat-flat-button color="primary" (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
+<button mat-flat-button type="button" color="primary" (click)="openSnackBar(message.value, action.value)">Show
+  snack-bar</button>
 
 <h3>Chips</h3>
 <mat-chip-list aria-label="Fish selection">

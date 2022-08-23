@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddressFormComponent } from './address-form/address-form.component';
 
+import { AddressFormComponent } from './address-form/address-form.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './cards/cards.component';
 import { CheckboxRadioComponent } from './checkbox-radio/checkbox-radio.component';
