@@ -77,6 +77,13 @@ $cocoon-yellow-palette: (
   ),
 );
 
+@mixin header-footer-theme($color: white, $background: $cocoondata-purple) {
+  .header-footer-theme {
+    background: $background;
+    color: $color;
+  }
+}
+
 $inter-typography: mat.define-typography-config(
   $font-family: 'Inter',
 );
@@ -101,6 +108,7 @@ $light-theme: mat.define-light-theme(
 @include mat.core-theme($light-theme);
 @include mat.button-theme($light-theme);
 @include mat.all-component-themes($light-theme);
+@include header-footer-theme();
 
 // Define an alternative light theme
 $alt-light-primary: mat.define-palette($cocoon-purple-palette, 400);
@@ -121,6 +129,7 @@ $alt-light-theme: mat.define-light-theme(
   @include mat.core-color($alt-light-theme);
   @include mat.button-color($alt-light-theme);
   @include mat.all-component-colors($alt-light-theme);
+  @include header-footer-theme();
 }
 
 // Define a dark theme
@@ -142,6 +151,7 @@ $dark-theme: mat.define-dark-theme(
   @include mat.core-color($dark-theme);
   @include mat.button-color($dark-theme);
   @include mat.all-component-colors($dark-theme);
+  @include header-footer-theme();
 }
 
 // Define an alternative dark theme
@@ -163,6 +173,7 @@ $alt-dark-theme: mat.define-dark-theme(
   @include mat.core-color($alt-dark-theme);
   @include mat.button-color($alt-dark-theme);
   @include mat.all-component-colors($alt-dark-theme);
+  @include header-footer-theme();
 }
 
 // Define light themes from pre-built palettes
@@ -183,6 +194,7 @@ $deeppurple-amber-light-theme: mat.define-light-theme(
   @include mat.core-color($deeppurple-amber-light-theme);
   @include mat.button-color($deeppurple-amber-light-theme);
   @include mat.all-component-colors($deeppurple-amber-light-theme);
+  @include header-footer-theme();
 }
 
 // indigo-pink
@@ -202,6 +214,7 @@ $indigo-pink-light-theme: mat.define-light-theme(
   @include mat.core-color($indigo-pink-light-theme);
   @include mat.button-color($indigo-pink-light-theme);
   @include mat.all-component-colors($indigo-pink-light-theme);
+  @include header-footer-theme();
 }
 
 // Define dark themes from pre-built palettes
@@ -222,6 +235,7 @@ $pink-bluegrey-dark-theme: mat.define-dark-theme(
   @include mat.core-color($pink-bluegrey-dark-theme);
   @include mat.button-color($pink-bluegrey-dark-theme);
   @include mat.all-component-colors($pink-bluegrey-dark-theme);
+  @include header-footer-theme();
 }
 
 // purple-green
@@ -241,4 +255,90 @@ $purple-green-dark-theme: mat.define-dark-theme(
   @include mat.core-color($purple-green-dark-theme);
   @include mat.button-color($purple-green-dark-theme);
   @include mat.all-component-colors($purple-green-dark-theme);
+  @include header-footer-theme();
+}
+
+@function modify-background($theme, $background-palette) {
+  // Replace the background in the color object's background palette.
+  $theme-color: map-get($theme, color);
+  $color-background-palette: map-get($theme-color, background);
+  $color-background-palette: map-merge($color-background-palette, $background-palette);
+
+  // Replace the background in the background palette.
+  $background-palette: map-get($theme, background);
+  $background-palette: map-merge($color-background-palette, $background-palette);
+
+  // Merge the changes into a new theme.
+  $modified-theme-color: map-merge(
+    $theme-color,
+    (
+      background: $color-background-palette,
+    )
+  );
+  $modified-theme: map-merge(
+    $theme,
+    (
+      color: $modified-theme-color,
+    )
+  );
+  $modified-theme: map-merge(
+    $modified-theme,
+    (
+      background: $background-palette,
+    )
+  );
+
+  @return $modified-theme;
+}
+
+$modified-background-palette: (
+  background: $cocoondata-purple,
+  app-bar: darken($cocoondata-purple, 5%),
+  card: map-get($cocoon-purple-palette, 800),
+  dialog: map-get($cocoon-purple-palette, 800),
+  raised-button: map-get($cocoon-purple-palette, 800),
+  selected-button: darken($cocoondata-purple, 5%),
+  selected-disabled-button: map-get($cocoon-purple-palette, 800),
+  unselected-chip: map-get($cocoon-purple-palette, 700),
+  tooltip: map-get($cocoon-purple-palette, 700),
+);
+
+$modified-green-dark-primary: mat.define-palette($cocoon-green-palette, 200);
+$modified-green-dark-accent: mat.define-palette($cocoon-yellow-palette, 300);
+$modified-green-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $modified-green-dark-primary,
+      accent: $modified-green-dark-accent,
+    ),
+    typography: $inter-typography,
+  )
+);
+$modified-green-dark-theme: modify-background($modified-green-dark-theme, $modified-background-palette);
+
+.modified-green-dark-theme {
+  @include mat.core-color($modified-green-dark-theme);
+  @include mat.button-color($modified-green-dark-theme);
+  @include mat.all-component-colors($modified-green-dark-theme);
+  @include header-footer-theme($cocoondata-purple, $cocoondata-green);
+}
+
+$modified-yellow-dark-primary: mat.define-palette($cocoon-yellow-palette, 300);
+$modified-yellow-dark-accent: mat.define-palette($cocoon-green-palette, 200);
+$modified-yellow-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $modified-yellow-dark-primary,
+      accent: $modified-yellow-dark-accent,
+    ),
+    typography: $inter-typography,
+  )
+);
+$modified-yellow-dark-theme: modify-background($modified-yellow-dark-theme, $modified-background-palette);
+
+.modified-yellow-dark-theme {
+  @include mat.core-color($modified-yellow-dark-theme);
+  @include mat.button-color($modified-yellow-dark-theme);
+  @include mat.all-component-colors($modified-yellow-dark-theme);
+  @include header-footer-theme($cocoondata-purple, $cocoondata-yellow);
 }

@@ -1,5 +1,5 @@
 <ng-container *ngIf="{mode: $mode | async, hasBackdrop: $hasBackdrop | async} as pageData">
-  <mat-toolbar class="example-header">
+  <mat-toolbar class="example-header header-footer-theme">
     <button mat-icon-button type="button" (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
@@ -53,6 +53,16 @@
         <mat-icon *ngIf="themeClass === 'purple-green-dark-theme'" color="accent">radio_button_checked
         </mat-icon>
         <span>Purple &amp; Green</span>
+      </button>
+      <button mat-menu-item type="button" (click)="changeTheme('modified-green-dark-theme')">
+        <mat-icon *ngIf="themeClass !== 'modified-green-dark-theme'">radio_button_unchecked</mat-icon>
+        <mat-icon *ngIf="themeClass === 'modified-green-dark-theme'" color="accent">radio_button_checked</mat-icon>
+        <span>Cocoon Data (green)</span>
+      </button>
+      <button mat-menu-item type="button" (click)="changeTheme('modified-yellow-dark-theme')">
+        <mat-icon *ngIf="themeClass !== 'modified-yellow-dark-theme'">radio_button_unchecked</mat-icon>
+        <mat-icon *ngIf="themeClass === 'modified-yellow-dark-theme'" color="accent">radio_button_checked</mat-icon>
+        <span>Cocoon Data (yellow)</span>
       </button>
     </mat-menu>
 
@@ -136,5 +146,5 @@
     </mat-drawer-content>
   </mat-sidenav-container>
 
-  <mat-toolbar class="example-footer">Footer</mat-toolbar>
+  <mat-toolbar class="example-footer header-footer-theme">Footer</mat-toolbar>
 </ng-container>
