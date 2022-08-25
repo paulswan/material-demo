@@ -1,5 +1,7 @@
 @use '@angular/material' as mat;
 @include mat.core();
+@include mat.strong-focus-indicators();
+
 @import './variables.scss';
 
 $cocoon-purple-palette: (
@@ -84,6 +86,22 @@ $cocoon-yellow-palette: (
   }
 }
 
+@mixin set-theme($theme) {
+  @include mat.core-theme($theme);
+  @include mat.button-theme($theme);
+  @include mat.all-component-themes($theme);
+  @include mat.strong-focus-indicators-theme($theme);
+  @include header-footer-theme();
+}
+
+@mixin set-color($theme) {
+  @include mat.core-color($theme);
+  @include mat.button-color($theme);
+  @include mat.all-component-colors($theme);
+  @include mat.strong-focus-indicators-theme($theme);
+  @include header-footer-theme();
+}
+
 $inter-typography: mat.define-typography-config(
   $font-family: 'Inter',
 );
@@ -105,10 +123,7 @@ $light-theme: mat.define-light-theme(
 );
 
 // Apply the light theme by default
-@include mat.core-theme($light-theme);
-@include mat.button-theme($light-theme);
-@include mat.all-component-themes($light-theme);
-@include header-footer-theme();
+@include set-theme($light-theme);
 
 // Define an alternative light theme
 $alt-light-primary: mat.define-palette($cocoon-purple-palette, 400);
@@ -126,10 +141,7 @@ $alt-light-theme: mat.define-light-theme(
 );
 
 .alt-light-theme {
-  @include mat.core-color($alt-light-theme);
-  @include mat.button-color($alt-light-theme);
-  @include mat.all-component-colors($alt-light-theme);
-  @include header-footer-theme();
+  @include set-color($alt-light-theme);
 }
 
 // Define a dark theme
@@ -148,10 +160,7 @@ $dark-theme: mat.define-dark-theme(
 );
 
 .dark-theme {
-  @include mat.core-color($dark-theme);
-  @include mat.button-color($dark-theme);
-  @include mat.all-component-colors($dark-theme);
-  @include header-footer-theme();
+  @include set-color($dark-theme);
 }
 
 // Define an alternative dark theme
@@ -170,10 +179,7 @@ $alt-dark-theme: mat.define-dark-theme(
 );
 
 .alt-dark-theme {
-  @include mat.core-color($alt-dark-theme);
-  @include mat.button-color($alt-dark-theme);
-  @include mat.all-component-colors($alt-dark-theme);
-  @include header-footer-theme();
+  @include set-color($alt-dark-theme);
 }
 
 // Define light themes from pre-built palettes
@@ -191,10 +197,7 @@ $deeppurple-amber-light-theme: mat.define-light-theme(
 );
 
 .deeppurple-amber-light-theme {
-  @include mat.core-color($deeppurple-amber-light-theme);
-  @include mat.button-color($deeppurple-amber-light-theme);
-  @include mat.all-component-colors($deeppurple-amber-light-theme);
-  @include header-footer-theme();
+  @include set-color($deeppurple-amber-light-theme);
 }
 
 // indigo-pink
@@ -211,10 +214,7 @@ $indigo-pink-light-theme: mat.define-light-theme(
 );
 
 .indigo-pink-light-theme {
-  @include mat.core-color($indigo-pink-light-theme);
-  @include mat.button-color($indigo-pink-light-theme);
-  @include mat.all-component-colors($indigo-pink-light-theme);
-  @include header-footer-theme();
+  @include set-color($indigo-pink-light-theme);
 }
 
 // Define dark themes from pre-built palettes
@@ -232,10 +232,7 @@ $pink-bluegrey-dark-theme: mat.define-dark-theme(
 );
 
 .pink-bluegrey-dark-theme {
-  @include mat.core-color($pink-bluegrey-dark-theme);
-  @include mat.button-color($pink-bluegrey-dark-theme);
-  @include mat.all-component-colors($pink-bluegrey-dark-theme);
-  @include header-footer-theme();
+  @include set-color($pink-bluegrey-dark-theme);
 }
 
 // purple-green
@@ -252,10 +249,7 @@ $purple-green-dark-theme: mat.define-dark-theme(
 );
 
 .purple-green-dark-theme {
-  @include mat.core-color($purple-green-dark-theme);
-  @include mat.button-color($purple-green-dark-theme);
-  @include mat.all-component-colors($purple-green-dark-theme);
-  @include header-footer-theme();
+  @include set-color($purple-green-dark-theme);
 }
 
 @function modify-background($theme, $background-palette) {
@@ -317,9 +311,7 @@ $modified-green-dark-theme: mat.define-dark-theme(
 $modified-green-dark-theme: modify-background($modified-green-dark-theme, $modified-background-palette);
 
 .modified-green-dark-theme {
-  @include mat.core-color($modified-green-dark-theme);
-  @include mat.button-color($modified-green-dark-theme);
-  @include mat.all-component-colors($modified-green-dark-theme);
+  @include set-color($modified-green-dark-theme);
   @include header-footer-theme($cocoondata-purple, $cocoondata-green);
 }
 
@@ -337,8 +329,6 @@ $modified-yellow-dark-theme: mat.define-dark-theme(
 $modified-yellow-dark-theme: modify-background($modified-yellow-dark-theme, $modified-background-palette);
 
 .modified-yellow-dark-theme {
-  @include mat.core-color($modified-yellow-dark-theme);
-  @include mat.button-color($modified-yellow-dark-theme);
-  @include mat.all-component-colors($modified-yellow-dark-theme);
+  @include set-color($modified-yellow-dark-theme);
   @include header-footer-theme($cocoondata-purple, $cocoondata-yellow);
 }
