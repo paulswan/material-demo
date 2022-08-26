@@ -4,7 +4,7 @@
 
 @include mat.strong-focus-indicators();
 
-// Required as strong-focus-indicators-theme() is causing problems when used multiple times
+// Required as strong-focus-indicators-theme() is causing problems on Stackblitz when used multiple times
 mat.$theme-ignore-duplication-warnings: true;
 
 $cocoon-purple-palette: (
@@ -86,6 +86,7 @@ $cocoon-yellow-palette: (
   .header-footer-theme {
     background: $background;
     color: $color;
+    @include mat.strong-focus-indicators-theme($color);
   }
 }
 
