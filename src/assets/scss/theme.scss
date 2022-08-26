@@ -1,8 +1,7 @@
 @use '@angular/material' as mat;
-@use './variables';
-@use './typography';
+@use './variables.scss';
+@use './typography.scss';
 
-@include mat.core();
 @include mat.strong-focus-indicators();
 
 // Required as strong-focus-indicators-theme() is causing problems when used multiple times
