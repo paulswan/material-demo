@@ -312,6 +312,10 @@ $modified-green-dark-theme: modify-background($modified-green-dark-theme, $modif
 .modified-green-dark-theme {
   @include set-color($modified-green-dark-theme);
   @include header-footer-theme(variables.$cocoondata-purple, variables.$cocoondata-green);
+
+  .mat-snack-bar-container {
+    background: map-get($cocoon-purple-palette, 100);
+  }
 }
 
 $modified-yellow-dark-primary: mat.define-palette($cocoon-yellow-palette, 300);
@@ -330,4 +334,8 @@ $modified-yellow-dark-theme: modify-background($modified-yellow-dark-theme, $mod
 .modified-yellow-dark-theme {
   @include set-color($modified-yellow-dark-theme);
   @include header-footer-theme(variables.$cocoondata-purple, variables.$cocoondata-yellow);
+
+  .mat-snack-bar-container {
+    background: map-get($cocoon-purple-palette, 100);
+  }
 }
