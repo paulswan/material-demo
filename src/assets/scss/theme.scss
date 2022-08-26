@@ -1,9 +1,12 @@
 @use '@angular/material' as mat;
-@use './variables.scss' as variables;
-@use './typography.scss' as typography;
+@use './variables';
+@use './typography';
 
 @include mat.core();
 @include mat.strong-focus-indicators();
+
+// Required as strong-focus-indicators-theme() is causing problems when used multiple times
+mat.$theme-ignore-duplication-warnings: true;
 
 $cocoon-purple-palette: (
   50: #eee1ef,
@@ -91,7 +94,7 @@ $cocoon-yellow-palette: (
   @include mat.core-theme($theme);
   @include mat.button-theme($theme);
   @include mat.all-component-themes($theme);
-  @include mat.strong-focus-indicators($theme);
+  @include mat.strong-focus-indicators-theme($theme);
   @include header-footer-theme();
 }
 

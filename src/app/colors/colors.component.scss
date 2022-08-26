@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@use '../../assets/scss/theme.scss' as theme;
+@use '../../assets/scss/theme';
 
 :host {
   @mixin get-palette-colors($palette, $hue) {
