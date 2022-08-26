@@ -1,8 +1,9 @@
 @use '@angular/material' as mat;
+@use './variables.scss' as variables;
+@use './typography.scss' as typography;
+
 @include mat.core();
 @include mat.strong-focus-indicators();
-
-@import './variables.scss';
 
 $cocoon-purple-palette: (
   50: #eee1ef,
@@ -14,7 +15,7 @@ $cocoon-purple-palette: (
   600: #6b0b81,
   700: #5a0779,
   800: #4b0471,
-  900: $cocoondata-purple,
+  900: variables.$cocoondata-purple,
   contrast: (
     50: rgba(black, 0.87),
     100: rgba(black, 0.87),
@@ -32,7 +33,7 @@ $cocoon-purple-palette: (
 $cocoon-green-palette: (
   50: #f2ffee,
   100: #dfffd5,
-  200: $cocoondata-green,
+  200: variables.$cocoondata-green,
   300: #b5fe9e,
   400: #9cfa83,
   500: #93f775,
@@ -58,7 +59,7 @@ $cocoon-yellow-palette: (
   50: #ffffe9,
   100: #fcfbc7,
   200: #faf8a1,
-  300: $cocoondata-yellow,
+  300: variables.$cocoondata-yellow,
   400: #fcf664,
   500: #f9f147,
   600: #fee546,
@@ -79,7 +80,7 @@ $cocoon-yellow-palette: (
   ),
 );
 
-@mixin header-footer-theme($color: white, $background: $cocoondata-purple) {
+@mixin header-footer-theme($color: white, $background: variables.$cocoondata-purple) {
   .header-footer-theme {
     background: $background;
     color: $color;
@@ -90,7 +91,7 @@ $cocoon-yellow-palette: (
   @include mat.core-theme($theme);
   @include mat.button-theme($theme);
   @include mat.all-component-themes($theme);
-  @include mat.strong-focus-indicators-theme($theme);
+  @include mat.strong-focus-indicators($theme);
   @include header-footer-theme();
 }
 
@@ -101,11 +102,6 @@ $cocoon-yellow-palette: (
   @include mat.strong-focus-indicators-theme($theme);
   @include header-footer-theme();
 }
-
-$inter-typography: mat.define-typography-config(
-  $font-family: 'Inter',
-);
-@include mat.core($inter-typography);
 
 // Define a light theme
 $light-primary: mat.define-palette($cocoon-purple-palette, 900);
@@ -118,7 +114,7 @@ $light-theme: mat.define-light-theme(
       accent: $light-accent,
       warn: $light-warn,
     ),
-    typography: $inter-typography,
+    typography: typography.$inter-typography,
   )
 );
 
@@ -136,7 +132,7 @@ $alt-light-theme: mat.define-light-theme(
       accent: $alt-light-accent,
       warn: $alt-light-warn,
     ),
-    typography: $inter-typography,
+    typography: typography.$inter-typography,
   )
 );
 
@@ -155,7 +151,7 @@ $dark-theme: mat.define-dark-theme(
       accent: $dark-accent,
       warn: $dark-warn,
     ),
-    typography: $inter-typography,
+    typography: typography.$inter-typography,
   )
 );
 
@@ -174,7 +170,7 @@ $alt-dark-theme: mat.define-dark-theme(
       accent: $alt-dark-accent,
       warn: $alt-dark-warn,
     ),
-    typography: $inter-typography,
+    typography: typography.$inter-typography,
   )
 );
 
@@ -192,7 +188,7 @@ $deeppurple-amber-light-theme: mat.define-light-theme(
       primary: $deeppurple-amber-light-primary,
       accent: $deeppurple-amber-light-accent,
     ),
-    typography: $inter-typography,
+    typography: typography.$inter-typography,
   )
 );
 
@@ -209,7 +205,7 @@ $indigo-pink-light-theme: mat.define-light-theme(
       primary: $indigo-pink-light-primary,
       accent: $indigo-pink-light-accent,
     ),
-    typography: $inter-typography,
+    typography: typography.$inter-typography,
   )
 );
 
@@ -227,7 +223,7 @@ $pink-bluegrey-dark-theme: mat.define-dark-theme(
       primary: $pink-bluegrey-dark-primary,
       accent: $pink-bluegrey-dark-accent,
     ),
-    typography: $inter-typography,
+    typography: typography.$inter-typography,
   )
 );
 
@@ -244,7 +240,7 @@ $purple-green-dark-theme: mat.define-dark-theme(
       primary: $purple-green-dark-primary,
       accent: $purple-green-dark-accent,
     ),
-    typography: $inter-typography,
+    typography: typography.$inter-typography,
   )
 );
 
@@ -286,12 +282,12 @@ $purple-green-dark-theme: mat.define-dark-theme(
 }
 
 $modified-background-palette: (
-  background: $cocoondata-purple,
-  app-bar: darken($cocoondata-purple, 5%),
+  background: variables.$cocoondata-purple,
+  app-bar: darken(variables.$cocoondata-purple, 5%),
   card: map-get($cocoon-purple-palette, 800),
   dialog: map-get($cocoon-purple-palette, 800),
   raised-button: map-get($cocoon-purple-palette, 800),
-  selected-button: darken($cocoondata-purple, 5%),
+  selected-button: darken(variables.$cocoondata-purple, 5%),
   selected-disabled-button: map-get($cocoon-purple-palette, 800),
   unselected-chip: map-get($cocoon-purple-palette, 700),
   tooltip: map-get($cocoon-purple-palette, 700),
@@ -305,14 +301,14 @@ $modified-green-dark-theme: mat.define-dark-theme(
       primary: $modified-green-dark-primary,
       accent: $modified-green-dark-accent,
     ),
-    typography: $inter-typography,
+    typography: typography.$inter-typography,
   )
 );
 $modified-green-dark-theme: modify-background($modified-green-dark-theme, $modified-background-palette);
 
 .modified-green-dark-theme {
   @include set-color($modified-green-dark-theme);
-  @include header-footer-theme($cocoondata-purple, $cocoondata-green);
+  @include header-footer-theme(variables.$cocoondata-purple, variables.$cocoondata-green);
 }
 
 $modified-yellow-dark-primary: mat.define-palette($cocoon-yellow-palette, 300);
@@ -323,12 +319,12 @@ $modified-yellow-dark-theme: mat.define-dark-theme(
       primary: $modified-yellow-dark-primary,
       accent: $modified-yellow-dark-accent,
     ),
-    typography: $inter-typography,
+    typography: typography.$inter-typography,
   )
 );
 $modified-yellow-dark-theme: modify-background($modified-yellow-dark-theme, $modified-background-palette);
 
 .modified-yellow-dark-theme {
   @include set-color($modified-yellow-dark-theme);
-  @include header-footer-theme($cocoondata-purple, $cocoondata-yellow);
+  @include header-footer-theme(variables.$cocoondata-purple, variables.$cocoondata-yellow);
 }

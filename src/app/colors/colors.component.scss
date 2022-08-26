@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@import '../../assets/scss/theme.scss';
+@use '../../assets/scss/theme.scss' as theme;
 
 :host {
   @mixin get-palette-colors($palette, $hue) {
@@ -21,9 +21,9 @@
     padding: 12px;
     width: 200px;
 
-    @include get-palette-classes($light-primary, 'light-primary');
-    @include get-palette-classes($light-accent, 'light-accent');
-    @include get-palette-classes($light-warn, 'light-warn');
+    @include get-palette-classes(theme.$light-primary, 'light-primary');
+    @include get-palette-classes(theme.$light-accent, 'light-accent');
+    @include get-palette-classes(theme.$light-warn, 'light-warn');
 
     @include get-palette-classes(mat.$deep-purple-palette, 'deep-purple');
     @include get-palette-classes(mat.$amber-palette, 'amber');

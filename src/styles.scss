@@ -1,7 +1,7 @@
 /* Add application styles & imports to this file! */
-@import './assets/scss/typography.scss';
-@import './assets/scss/variables.scss';
-@import './assets/scss/theme.scss';
+@forward './assets/scss/typography.scss';
+@forward './assets/scss/variables.scss';
+@forward './assets/scss/theme.scss';
 
 body {
   margin: 0;
