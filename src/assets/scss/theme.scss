@@ -82,8 +82,8 @@ $cocoon-yellow-palette: (
   ),
 );
 
-@mixin header-footer-theme($color: white, $background: variables.$cocoondata-purple) {
-  .header-footer-theme {
+@mixin modify-toolbar-theme($color: white, $background: variables.$cocoondata-purple) {
+  .toolbar-theme {
     background: $background;
     color: $color;
     @include mat.strong-focus-indicators-theme($color);
@@ -95,7 +95,7 @@ $cocoon-yellow-palette: (
   @include mat.button-theme($theme);
   @include mat.all-component-themes($theme);
   @include mat.strong-focus-indicators-theme($theme);
-  @include header-footer-theme();
+  @include modify-toolbar-theme();
 }
 
 @mixin set-color($theme) {
@@ -103,7 +103,7 @@ $cocoon-yellow-palette: (
   @include mat.button-color($theme);
   @include mat.all-component-colors($theme);
   @include mat.strong-focus-indicators-theme($theme);
-  @include header-footer-theme();
+  @include modify-toolbar-theme();
 }
 
 // Define a light theme
@@ -311,7 +311,7 @@ $modified-green-dark-theme: modify-background($modified-green-dark-theme, $modif
 
 .modified-green-dark-theme {
   @include set-color($modified-green-dark-theme);
-  @include header-footer-theme(variables.$cocoondata-purple, variables.$cocoondata-green);
+  @include modify-toolbar-theme(variables.$cocoondata-purple, variables.$cocoondata-green);
 
   .mat-snack-bar-container {
     background: map-get($cocoon-purple-palette, 100);
@@ -333,7 +333,7 @@ $modified-yellow-dark-theme: modify-background($modified-yellow-dark-theme, $mod
 
 .modified-yellow-dark-theme {
   @include set-color($modified-yellow-dark-theme);
-  @include header-footer-theme(variables.$cocoondata-purple, variables.$cocoondata-yellow);
+  @include modify-toolbar-theme(variables.$cocoondata-purple, variables.$cocoondata-yellow);
 
   .mat-snack-bar-container {
     background: map-get($cocoon-purple-palette, 100);
