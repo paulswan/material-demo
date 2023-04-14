@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { DateFnsAdapter, MAT_DATE_FNS_FORMATS } from '@angular/material-date-fns-adapter';
 import { DateAdapter, ErrorStateMatcher, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { FloatLabelType, MatFormFieldAppearance } from '@angular/material/form-field';
 import { MatRadioChange } from '@angular/material/radio';
 import { Locale } from 'date-fns';
 import * as locale from 'date-fns/locale';
@@ -35,6 +35,9 @@ export class InputsComponent {
 
   formFieldAppearance: MatFormFieldAppearance = 'fill';
   appearanceFormControl = new FormControl(this.formFieldAppearance);
+
+  floatLabelType: FloatLabelType = 'auto';
+  floatLabelTypeFormControl = new FormControl(this.floatLabelType);
 
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   selected = new FormControl('valid', [Validators.required, Validators.pattern('valid')]);
@@ -89,5 +92,9 @@ export class InputsComponent {
 
   setFormFieldAppearance(appearance: MatFormFieldAppearance) {
     this.formFieldAppearance = appearance;
+  }
+
+  setFloatLabelType(floatLabelType: FloatLabelType) {
+    this.floatLabelType = floatLabelType;
   }
 }

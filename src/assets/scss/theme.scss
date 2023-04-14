@@ -57,6 +57,31 @@ $nextdc-grey-palette: (
   ),
 );
 
+$nextdc-orange-palette: (
+  50: #fff3e0,
+  100: #ffe0b2,
+  200: #ffcd80,
+  300: #ffb84d,
+  400: #ffa826,
+  500: variables.$product-color,
+  600: #fb8d00,
+  700: #f57d00,
+  800: #ef6d00,
+  900: #e65200,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+
 $cocoon-purple-palette: (
   50: #eee1ef,
   100: #d5b5d9,
@@ -149,7 +174,7 @@ $cocoon-yellow-palette: (
 // Define NextDC light theme
 $nextdc-light-primary: mat.define-palette($nextdc-red-palette, 600);
 $nextdc-light-accent: mat.define-palette($nextdc-grey-palette, 700);
-$nextdc-light-warn: mat.define-palette($nextdc-red-palette, 900);
+$nextdc-light-warn: mat.define-palette($nextdc-orange-palette, 500);
 $nextdc-light-theme: mat.define-light-theme(
   (
     color: (
@@ -162,6 +187,24 @@ $nextdc-light-theme: mat.define-light-theme(
 
 // Apply the NextDC light theme by default
 @include set-theme($nextdc-light-theme);
+
+// Define NextDC light theme
+$nextdc-alt-light-primary: mat.define-palette($nextdc-grey-palette, 700);
+$nextdc-alt-light-accent: mat.define-palette($nextdc-red-palette, 600);
+$nextdc-alt-light-warn: mat.define-palette($nextdc-red-palette, 900);
+$nextdc-alt-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $nextdc-alt-light-primary,
+      accent: $nextdc-alt-light-accent,
+      warn: $nextdc-alt-light-warn,
+    ),
+  )
+);
+
+.nextdc-alt-light-theme {
+  @include set-color($nextdc-alt-light-theme);
+}
 
 // Define a light theme
 $light-primary: mat.define-palette($cocoon-purple-palette, 900);
@@ -179,7 +222,7 @@ $light-theme: mat.define-light-theme(
 );
 
 .light-theme {
-  @include set-theme($light-theme);
+  @include set-color($light-theme);
 }
 
 // Define an alternative light theme

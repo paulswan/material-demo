@@ -17,6 +17,11 @@
         <mat-icon *ngIf="themeClass === 'nextdc-light-theme'" color="accent">radio_button_checked</mat-icon>
         <span>NextDC palette</span>
       </button>
+      <button mat-menu-item type="button" (click)="changeTheme('nextdc-alt-light-theme')">
+        <mat-icon *ngIf="themeClass !== 'nextdc-alt-light-theme'">radio_button_unchecked</mat-icon>
+        <mat-icon *ngIf="themeClass === 'nextdc-alt-light-theme'" color="accent">radio_button_checked</mat-icon>
+        <span>NextDC palette (alt)</span>
+      </button>
       <button mat-menu-item type="button" (click)="changeTheme('light-theme')">
         <mat-icon *ngIf="themeClass !== 'light-theme'">radio_button_unchecked</mat-icon>
         <mat-icon *ngIf="themeClass === 'light-theme'" color="accent">radio_button_checked</mat-icon>
