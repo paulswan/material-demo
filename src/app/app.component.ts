@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { SidenavService } from './services/sidenav.service';
+import { NavigationService } from './services/navigation.service';
 
 @Component({
   selector: 'my-app',
@@ -8,13 +8,14 @@ import { SidenavService } from './services/sidenav.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  opened = false;
-  $mode = this.sidenavService.$mode;
-  $hasBackdrop = this.sidenavService.$hasBackdrop;
+  opened = true;
+  $mode = this.navigationService.$sidnavMode;
+  $hasBackdrop = this.navigationService.$sidnavHasBackdrop;
+  $toolbarColor = this.navigationService.$toolbarColor;
 
-  themeClass = 'light-theme';
+  themeClass = 'nextdc-light-theme';
 
-  constructor(private sidenavService: SidenavService) {}
+  constructor(private navigationService: NavigationService) {}
 
   changeTheme(theme: string) {
     const bodyElement = document.body;

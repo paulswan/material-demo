@@ -25,6 +25,10 @@
     @include get-palette-classes(theme.$light-accent, 'light-accent');
     @include get-palette-classes(theme.$light-warn, 'light-warn');
 
+    @include get-palette-classes(theme.$nextdc-light-primary, 'nextdc-light-primary');
+    @include get-palette-classes(theme.$nextdc-light-accent, 'nextdc-light-accent');
+    @include get-palette-classes(theme.$nextdc-light-warn, 'nextdc-light-warn');
+
     @include get-palette-classes(mat.$deep-purple-palette, 'deep-purple');
     @include get-palette-classes(mat.$amber-palette, 'amber');
     @include get-palette-classes(mat.$indigo-palette, 'indigo');

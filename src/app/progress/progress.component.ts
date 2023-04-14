@@ -11,12 +11,12 @@ import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 export class ProgressComponent {
   // Progress Bar
   color: ThemePalette = 'primary';
-  mode: ProgressBarMode = 'determinate';
+  mode: ProgressBarMode = 'indeterminate';
   value = 50;
   bufferValue = 75;
 
   // Progress Spinner
   spinnerColor: ThemePalette = 'primary';
-  spinnerMode: ProgressSpinnerMode = 'determinate';
+  spinnerMode: ProgressSpinnerMode = 'indeterminate';
   spinnerValue = 50;
 }

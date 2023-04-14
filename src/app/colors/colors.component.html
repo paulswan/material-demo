@@ -1,6 +1,22 @@
 <!-- eslint-disable @angular-eslint/template/no-call-expression -->
 <h1>Colour Palette</h1>
 
+<h3>NextDC color palettes</h3>
+<mat-grid-list cols="3" rowHeight="50px" style="width: 900px">
+  <ng-container *ngFor="let hue of [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]">
+    <ng-container *ngFor="let color of ['primary', 'accent', 'warn']">
+      <mat-grid-tile>
+        <div class="color-theme nextdc-light-{{color}}-{{hue}}">
+          <span>{{color | titlecase}} {{hue}}</span>
+          <span *ngIf="nextDcColors.includes('nextdc-light-'+color+'-'+hue)">&nbsp;*</span>
+        </div>
+      </mat-grid-tile>
+    </ng-container>
+  </ng-container>
+</mat-grid-list>
+
+<br>
+
 <h3>Cocoon Data color palettes</h3>
 <mat-grid-list cols="3" rowHeight="50px" style="width: 900px">
   <ng-container *ngFor="let hue of [50, 100, 200, 300, 400, 500, 600, 700, 800, 900]">

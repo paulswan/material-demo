@@ -12,9 +12,9 @@ import { CheckboxRadioComponent } from './checkbox-radio/checkbox-radio.componen
 import { ColorsComponent } from './colors/colors.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
-import { HomeComponent } from './home/home.component';
 import { InputsComponent } from './inputs/inputs.component';
 import { MaterialModule } from './material/material.module';
+import { NavigationComponent } from './navigation/navigation.component';
 import { BottomSheetExampleComponent, DialogExampleComponent, OtherComponent } from './other/other.component';
 import { ProgressComponent } from './progress/progress.component';
 import { SlidersComponent } from './sliders/sliders.component';
@@ -35,7 +35,7 @@ import { TypographyComponent } from './typography/typography.component';
   ],
   declarations: [
     AppComponent,
-    HomeComponent,
+    NavigationComponent,
     ButtonsComponent,
     ColorsComponent,
     TypographyComponent,

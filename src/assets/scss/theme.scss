@@ -7,6 +7,56 @@
 // Required as strong-focus-indicators-theme() is causing problems on Stackblitz when used multiple times
 mat.$theme-ignore-duplication-warnings: true;
 
+$nextdc-red-palette: (
+  50: #ffeaed,
+  100: #ffcbd0,
+  200: #ef9796,
+  300: #e46f6d,
+  400: #ee4e48,
+  500: #f23d2c,
+  600: variables.$main-accent,
+  700: #d12726,
+  800: #c41f1f,
+  900: #b61012,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+
+$nextdc-grey-palette: (
+  50: #f7f8fe,
+  100: #f0f1f7,
+  200: #e6e7ed,
+  300: #d5d7dc,
+  400: #b1b3b8,
+  500: #919298,
+  600: #696a70,
+  700: variables.$main-dark,
+  800: #38393d,
+  900: #18191d,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+
 $cocoon-purple-palette: (
   50: #eee1ef,
   100: #d5b5d9,
@@ -82,20 +132,11 @@ $cocoon-yellow-palette: (
   ),
 );
 
-@mixin modify-toolbar-theme($color: white, $background: variables.$cocoondata-purple) {
-  .toolbar-theme {
-    background: $background;
-    color: $color;
-    @include mat.strong-focus-indicators-theme($color);
-  }
-}
-
 @mixin set-theme($theme) {
   @include mat.core-theme($theme);
   @include mat.button-theme($theme);
   @include mat.all-component-themes($theme);
   @include mat.strong-focus-indicators-theme($theme);
-  @include modify-toolbar-theme();
 }
 
 @mixin set-color($theme) {
@@ -103,8 +144,24 @@ $cocoon-yellow-palette: (
   @include mat.button-color($theme);
   @include mat.all-component-colors($theme);
   @include mat.strong-focus-indicators-theme($theme);
-  @include modify-toolbar-theme();
 }
+
+// Define NextDC light theme
+$nextdc-light-primary: mat.define-palette($nextdc-red-palette, 600);
+$nextdc-light-accent: mat.define-palette($nextdc-grey-palette, 700);
+$nextdc-light-warn: mat.define-palette($nextdc-red-palette, 900);
+$nextdc-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $nextdc-light-primary,
+      accent: $nextdc-light-accent,
+      warn: $nextdc-light-warn,
+    ),
+  )
+);
+
+// Apply the NextDC light theme by default
+@include set-theme($nextdc-light-theme);
 
 // Define a light theme
 $light-primary: mat.define-palette($cocoon-purple-palette, 900);
@@ -121,8 +178,9 @@ $light-theme: mat.define-light-theme(
   )
 );
 
-// Apply the light theme by default
-@include set-theme($light-theme);
+.light-theme {
+  @include set-theme($light-theme);
+}
 
 // Define an alternative light theme
 $alt-light-primary: mat.define-palette($cocoon-purple-palette, 400);
@@ -143,27 +201,26 @@ $alt-light-theme: mat.define-light-theme(
   @include set-color($alt-light-theme);
 }
 
-// Define a dark theme
-$dark-primary: mat.define-palette($cocoon-purple-palette, 900);
-$dark-accent: mat.define-palette($cocoon-green-palette, 200);
-$dark-warn: mat.define-palette($cocoon-yellow-palette, 300);
-$dark-theme: mat.define-dark-theme(
-  (
-    color: (
-      primary: $dark-primary,
-      accent: $dark-accent,
-      warn: $dark-warn,
-    ),
-    typography: typography.$inter-typography,
-  )
-);
-
-.dark-theme {
-  @include set-color($dark-theme);
-}
+// // Define a dark theme
+// $dark-primary: mat.define-palette($cocoon-purple-palette, 900);
+// $dark-accent: mat.define-palette($cocoon-green-palette, 200);
+// $dark-warn: mat.define-palette($cocoon-yellow-palette, 300);
+// $dark-theme: mat.define-dark-theme(
+//   (
+//     color: (
+//       primary: $dark-primary,
+//       accent: $dark-accent,
+//       warn: $dark-warn,
+//     ),
+//     typography: typography.$inter-typography,
+//   )
+// );
+// .dark-theme {
+//   @include set-color($dark-theme);
+// }
 
 // Define an alternative dark theme
-$alt-dark-primary: mat.define-palette($cocoon-purple-palette, 200);
+$alt-dark-primary: mat.define-palette($cocoon-purple-palette, 300);
 $alt-dark-accent: mat.define-palette($cocoon-green-palette, 400);
 $alt-dark-warn: mat.define-palette($cocoon-yellow-palette, 400);
 $alt-dark-theme: mat.define-dark-theme(
@@ -311,7 +368,6 @@ $modified-green-dark-theme: modify-background($modified-green-dark-theme, $modif
 
 .modified-green-dark-theme {
   @include set-color($modified-green-dark-theme);
-  @include modify-toolbar-theme(variables.$cocoondata-purple, variables.$cocoondata-green);
 
   .mat-snack-bar-container {
     background: map-get($cocoon-purple-palette, 100);
@@ -333,7 +389,6 @@ $modified-yellow-dark-theme: modify-background($modified-yellow-dark-theme, $mod
 
 .modified-yellow-dark-theme {
   @include set-color($modified-yellow-dark-theme);
-  @include modify-toolbar-theme(variables.$cocoondata-purple, variables.$cocoondata-yellow);
 
   .mat-snack-bar-container {
     background: map-get($cocoon-purple-palette, 100);

@@ -1,9 +1,10 @@
-<ng-container *ngIf="{mode: $mode | async, hasBackdrop: $hasBackdrop | async} as pageData">
-  <mat-toolbar class="example-header toolbar-theme">
+<ng-container
+              *ngIf="{mode: $mode | async, hasBackdrop: $hasBackdrop | async, color: $toolbarColor | async} as pageData">
+  <mat-toolbar class="example-header" [color]="pageData.color">
     <button mat-icon-button type="button" (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>Cocoon Data</span>
+    <span>Angular Material Theming Demo</span>
     <span class="example-spacer"></span>
 
     <button mat-icon-button type="button" [matMenuTriggerFor]="themeMenu" matTooltip="Choose Theme">
@@ -11,6 +12,11 @@
     </button>
     <mat-menu #themeMenu="matMenu" matTooltip="Notifications" xPosition="before">
       <span mat-menu-item disabled>Light Themes</span>
+      <button mat-menu-item type="button" (click)="changeTheme('nextdc-light-theme')">
+        <mat-icon *ngIf="themeClass !== 'nextdc-light-theme'">radio_button_unchecked</mat-icon>
+        <mat-icon *ngIf="themeClass === 'nextdc-light-theme'" color="accent">radio_button_checked</mat-icon>
+        <span>NextDC palette</span>
+      </button>
       <button mat-menu-item type="button" (click)="changeTheme('light-theme')">
         <mat-icon *ngIf="themeClass !== 'light-theme'">radio_button_unchecked</mat-icon>
         <mat-icon *ngIf="themeClass === 'light-theme'" color="accent">radio_button_checked</mat-icon>
@@ -33,11 +39,11 @@
       </button>
       <mat-divider></mat-divider>
       <span mat-menu-item disabled>Dark Themes</span>
-      <button mat-menu-item type="button" (click)="changeTheme('dark-theme')">
+      <!-- <button mat-menu-item type="button" (click)="changeTheme('dark-theme')">
         <mat-icon *ngIf="themeClass !== 'dark-theme'">radio_button_unchecked</mat-icon>
         <mat-icon *ngIf="themeClass === 'dark-theme'" color="accent">radio_button_checked</mat-icon>
         <span>Cocoon Data palette</span>
-      </button>
+      </button> -->
       <button mat-menu-item type="button" (click)="changeTheme('alt-dark-theme')">
         <mat-icon *ngIf="themeClass !== 'alt-dark-theme'">radio_button_unchecked</mat-icon>
         <mat-icon *ngIf="themeClass === 'alt-dark-theme'" color="accent">radio_button_checked</mat-icon>
@@ -72,7 +78,7 @@
     <button mat-icon-button type="button" matTooltip="History">
       <mat-icon>all_inbox</mat-icon>
     </button>
-    <button mat-icon-button type="button" routerLink="/home" matTooltip="Home">
+    <button mat-icon-button type="button" routerLink="/navigation" matTooltip="Home">
       <mat-icon>home</mat-icon>
     </button>
 
@@ -80,7 +86,7 @@
       <mat-icon>person</mat-icon>
     </button>
     <mat-menu #personMenu="matMenu" matTooltip="Notifications">
-      <button mat-menu-item type="button" routerLink="/home">
+      <button mat-menu-item type="button" routerLink="/navigation">
         <mat-icon>home</mat-icon>
         <span>Home</span>
       </button>
@@ -118,11 +124,11 @@
   </mat-toolbar>
 
   <mat-sidenav-container class="example-container" [hasBackdrop]="pageData.hasBackdrop" [style.marginTop.px]="64">
-    <mat-sidenav [mode]="pageData.mode || 'over'" [(opened)]="opened" #sidenav class="example-sidenav"
-                 (click)="sidenav.toggle()"
-                 [fixedInViewport]="false" [fixedTopGap]="64" [fixedBottomGap]="64">
+    <mat-sidenav [mode]="pageData.mode || 'side'" [(opened)]="opened" #sidenav class="example-sidenav"
+                 [fixedInViewport]="true" [fixedTopGap]="64" [fixedBottomGap]="64">
+      <!-- (click)="sidenav.toggle()" -->
       <mat-nav-list>
-        <a mat-list-item routerLink="/home">Angular Material</a>
+        <a mat-list-item routerLink="/navigation">Navigation</a>
         <a mat-list-item routerLink="/colors">Colour Palette</a>
         <a mat-list-item routerLink="/typography">Typography</a>
         <a mat-list-item routerLink="/buttons">Buttons & Badges</a>
@@ -146,5 +152,5 @@
     </mat-drawer-content>
   </mat-sidenav-container>
 
-  <mat-toolbar class="example-footer toolbar-theme">Footer</mat-toolbar>
+  <mat-toolbar class="example-footer" [color]="pageData.color">Footer</mat-toolbar>
 </ng-container>
